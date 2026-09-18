@@ -9,7 +9,7 @@ on:
       - "sw.js"
       - "logo.svg"
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,19 +26,29 @@ jobs:
           mkdir -p app/src/main/assets
           cp app/index.html app/src/main/assets/index.html
       - name: Apply KPC patches
+        env:
+          KPC_KEY: ${{ secrets.KPC_SUPABASE_PUBLISHABLE_KEY }}
         run: |
           python scripts/patch_routines.py
           python scripts/patch_range_equity.py
           python scripts/patch_hand_draft.py
           python scripts/patch_v22_accounts_hands.py
           cp app/src/main/assets/index.html app/index.html
-          sed -i 's|__KPC_SUPABASE_PUBLISHABLE_KEY__|sb_publishable__6uNHhAsZQ-RF21RTLE31g_A2CukL8j|g' app/index.html
+          python -c "from pathlib import Path; import os; p=Path('app/index.html'); p.write_text(p.read_text().replace('__KPC_SUPABASE_PUBLISHABLE_KEY__',os.environ['KPC_KEY']))"
           python scripts/patch_pwa.py
       - name: Assemble PWA
         run: |
           cp manifest.webmanifest sw.js logo.svg app/
           grep -q "KPC_V22" app/index.html
           grep -q "apple-mobile-web-app-capable" app/index.html
+      - name: Publish PWA to GitHub Pages root
+        run: |
+          cp app/index.html ./index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html manifest.webmanifest sw.js logo.svg
+          git diff --cached --quiet || git commit -m "Publish KPC Mental Game iPhone PWA"
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: KPC-Mental-Game-iPhone-PWA
