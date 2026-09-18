@@ -34,7 +34,7 @@ jobs:
           python scripts/patch_hand_draft.py
           python scripts/patch_v22_accounts_hands.py
           cp app/src/main/assets/index.html app/index.html
-          python -c "from pathlib import Path; import os; p=Path('app/index.html'); p.write_text(p.read_text().replace('__KPC_SUPABASE_PUBLISHABLE_KEY__',os.environ['KPC_KEY']))"
+          test -n "$KPC_KEY" || (echo "Missing KPC_SUPABASE_PUBLISHABLE_KEY" && exit 1)\n          python -c "from pathlib import Path; import os; p=Path(\'app/index.html\'); s=p.read_text(); s=s.replace(\'__KPC_SUPABASE_PUBLISHABLE_KEY__\',os.environ[\'KPC_KEY\']); p.write_text(s); assert \'__KPC_SUPABASE_PUBLISHABLE_KEY__\' not in s; assert len(os.environ[\'KPC_KEY\']) > 20"
           python scripts/patch_pwa.py
       - name: Assemble PWA
         run: |
