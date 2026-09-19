@@ -1,4 +1,5 @@
 name: Build KPC iPhone PWA
+
 on:
   workflow_dispatch:
   push:
@@ -8,49 +9,102 @@ on:
       - "manifest.webmanifest"
       - "sw.js"
       - "logo.svg"
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - run: pip install gdown
+
       - name: Download KPC base
         run: |
-          mkdir -p app
-          gdown "https://drive.google.com/uc?id=1FB_Sp-jeNpaMZjBBVDXCETdSJrZWmo2l" -O app/index.html
+          set -e
           mkdir -p app/src/main/assets
-          cp app/index.html app/src/main/assets/index.html
-      - name: Apply KPC patches
+          gdown "https://drive.google.com/uc?id=1FB_Sp-jeNpaMZjBBVDXCETdSJrZWmo2l" -O app/src/main/assets/index.html
+          test -s app/src/main/assets/index.html
+          grep -q "KPC Mental Game" app/src/main/assets/index.html
+          sed -i 's/kpc-logo.png/kpc-logo.svg/g' app/src/main/assets/index.html
+
+      - name: Apply complete KPC V2.10 feature set
         env:
           KPC_KEY: ${{ secrets.KPC_SUPABASE_PUBLISHABLE_KEY }}
         run: |
+          set -e
           python scripts/patch_routines.py
           python scripts/patch_range_equity.py
           python scripts/patch_hand_draft.py
+          python scripts/patch_action_equity_v23.py
+          python scripts/patch_partial_solver_v24.py
+          python scripts/patch_finish_review_v25.py
           python scripts/patch_v22_accounts_hands.py
-          cp app/src/main/assets/index.html app/index.html
+          python scripts/patch_tells_v26.py
+          python scripts/patch_scouting_v27.py
+          python scripts/patch_scout_cloud_v28.py
+
           test -n "$KPC_KEY" || { echo "Missing KPC_SUPABASE_PUBLISHABLE_KEY"; exit 1; }
-          python -c "from pathlib import Path; import os; p=Path('app/index.html'); s=p.read_text(); s=s.replace('__KPC_SUPABASE_PUBLISHABLE_KEY__', os.environ['KPC_KEY']); p.write_text(s); assert '__KPC_SUPABASE_PUBLISHABLE_KEY__' not in s; assert len(os.environ['KPC_KEY']) > 20"
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          p=Path('app/src/main/assets/index.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('__KPC_SUPABASE_PUBLISHABLE_KEY__',os.environ['KPC_KEY'])
+          p.write_text(s,encoding='utf-8')
+          PY
+
+          grep -q "KPC_RANGE_V19" app/src/main/assets/index.html
+          grep -q "KPC_HAND_DRAFT_V21" app/src/main/assets/index.html
+          grep -q "KPC_V22" app/src/main/assets/index.html
+          grep -q "KPC_ACTION_EQUITY_V23" app/src/main/assets/index.html
+          grep -q "KPC_PARTIAL_SOLVER_V24" app/src/main/assets/index.html
+          grep -q "KPC_FINISH_REVIEW_V25" app/src/main/assets/index.html
+          grep -q "KPC_TELLS_V26" app/src/main/assets/index.html
+          grep -q "KPC_SCOUTING_V27" app/src/main/assets/index.html
+          grep -q "KPC_SCOUT_CLOUD_V28" app/src/main/assets/index.html
+          ! grep -q "__KPC_SUPABASE_PUBLISHABLE_KEY__" app/src/main/assets/index.html
+
+          cp app/src/main/assets/index.html app/index.html
           python scripts/patch_pwa.py
+
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('app/index.html').read_text(encoding='utf-8')
+          blocks=re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>',s,flags=re.S|re.I)
+          Path('/tmp/kpc-pwa-inline.js').write_text('\n'.join(blocks),encoding='utf-8')
+          PY
+          node --check /tmp/kpc-pwa-inline.js
+
       - name: Assemble PWA
         run: |
           cp manifest.webmanifest sw.js logo.svg app/
-          grep -q "KPC_V22" app/index.html
-          grep -q "apple-mobile-web-app-capable" app/index.html
+          grep -q 'id="kpc-ios-pwa"' app/index.html
+          grep -q 'KPC_SCOUT_CLOUD_V28' app/index.html
+          grep -q 'apple-mobile-web-app-capable' app/index.html
+          grep -q 'Ajouter à l’écran d’accueil' app/index.html
+
       - name: Publish PWA to GitHub Pages root
         run: |
           cp app/index.html ./index.html
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html manifest.webmanifest sw.js logo.svg
-          git diff --cached --quiet || git commit -m "Publish KPC Mental Game iPhone PWA"
+          git diff --cached --quiet || git commit -m "Publish full KPC Mental Game V2.10 iPhone PWA"
           git push
+
       - uses: actions/upload-artifact@v4
         with:
-          name: KPC-Mental-Game-iPhone-PWA
+          name: KPC-Mental-Game-iPhone-PWA-v2.10
           path: app/
