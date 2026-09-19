@@ -38,7 +38,7 @@ jobs:
           grep -q "KPC Mental Game" app/src/main/assets/index.html
           sed -i 's/kpc-logo.png/kpc-logo.svg/g' app/src/main/assets/index.html
 
-      - name: Apply complete KPC V2.10 feature set
+      - name: Apply complete KPC feature set
         env:
           KPC_KEY: ${{ secrets.KPC_SUPABASE_PUBLISHABLE_KEY }}
         run: |
@@ -76,6 +76,13 @@ jobs:
           ! grep -q "__KPC_SUPABASE_PUBLISHABLE_KEY__" app/src/main/assets/index.html
 
           cp app/src/main/assets/index.html app/index.html
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('app/index.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('KPC Mental Game','KPC Mental Game et Compétition')
+          p.write_text(s,encoding='utf-8')
+          PY
           python scripts/patch_pwa.py
 
           python - <<'PY'
@@ -101,10 +108,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html manifest.webmanifest sw.js logo.svg
-          git diff --cached --quiet || git commit -m "Publish full KPC Mental Game V2.10 iPhone PWA"
+          git diff --cached --quiet || git commit -m "Publish KPC Mental Game et Compétition iPhone PWA"
           git push
 
       - uses: actions/upload-artifact@v4
         with:
-          name: KPC-Mental-Game-iPhone-PWA-v2.10
+          name: KPC-Mental-Game-et-Competition-iPhone-PWA-v2.12
           path: app/
