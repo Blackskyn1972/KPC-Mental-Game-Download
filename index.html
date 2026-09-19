@@ -2147,6 +2147,22 @@ let kpcV28DebounceTimer=null;
 let kpcV28CurrentView={type:null,id:null};
 let kpcV28RealtimeState='offline';
 let kpcV28Ref=1;
+let kpcV28ViewToken=0;
+
+function kpcV28SetView(type,id=null){
+  kpcV28ViewToken++;
+  kpcV28CurrentView={type,id};
+  return kpcV28ViewToken;
+}
+function kpcV28ClearView(){
+  kpcV28ViewToken++;
+  kpcV28CurrentView={type:null,id:null};
+}
+function kpcV28ScoutingVisible(){
+  const modal=$('#modal'), host=$('#modal-content');
+  if(!modal?.classList.contains('open') || !host) return false;
+  return !!host.querySelector('.kpc-scout-list,.kpc-scout-profile-head,.kpc-scout-edit-head,#sc_club,#st_obs,#kpc-v28-sync');
+}
 
 function kpcV28Session(){
   try{return JSON.parse(localStorage.getItem(KPC_V28_SESSION)||'null')}catch(e){return null}
@@ -2337,44 +2353,68 @@ const kpcV28BaseOpenProfile=window.openScoutProfile;
 const kpcV28BaseOpenEdit=window.openScoutEdit;
 
 window.openScouting=async function(){
-  kpcV28CurrentView={type:'list',id:null};
+  const token=kpcV28SetView('list',null);
   try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
+  if(token!==kpcV28ViewToken || kpcV28CurrentView.type!=='list') return;
   const r=await kpcV28BaseOpenScouting();
-  setTimeout(kpcV28InjectStatus,0);
+  if(token!==kpcV28ViewToken) return r;
+  setTimeout(()=>{ if(token===kpcV28ViewToken && kpcV28ScoutingVisible()) kpcV28InjectStatus(); },0);
   kpcV28ConnectRealtime();
   return r;
 };
 openScouting=window.openScouting;
 
 window.openScoutProfile=async function(id){
-  kpcV28CurrentView={type:'profile',id};
+  const token=kpcV28SetView('profile',id);
   if(Date.now()-kpcV28LastSync>5000){
     try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
   }
+  if(token!==kpcV28ViewToken || kpcV28CurrentView.type!=='profile' || kpcV28CurrentView.id!==id) return;
   const r=await kpcV28BaseOpenProfile(id);
-  setTimeout(kpcV28InjectStatus,0);
+  if(token!==kpcV28ViewToken) return r;
+  setTimeout(()=>{ if(token===kpcV28ViewToken && kpcV28ScoutingVisible()) kpcV28InjectStatus(); },0);
   kpcV28ConnectRealtime();
   return r;
 };
 openScoutProfile=window.openScoutProfile;
 
 window.openScoutEdit=async function(id=''){
+  const token=kpcV28SetView('edit',id||null);
   if(Date.now()-kpcV28LastSync>5000){
     try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
   }
-  kpcV28CurrentView={type:'edit',id:id||null};
+  if(token!==kpcV28ViewToken || kpcV28CurrentView.type!=='edit') return;
   return kpcV28BaseOpenEdit(id);
 };
 openScoutEdit=window.openScoutEdit;
 
 function kpcV28RenderCurrent(){
-  if(kpcV28Editing()) return;
+  if(!kpcV28ScoutingVisible() || kpcV28Editing()) return;
+  const token=kpcV28ViewToken;
   if(kpcV28CurrentView.type==='profile' && kpcV28CurrentView.id){
-    kpcV28BaseOpenProfile(kpcV28CurrentView.id).then(()=>setTimeout(kpcV28InjectStatus,0));
+    kpcV28BaseOpenProfile(kpcV28CurrentView.id).then(()=>{
+      if(token===kpcV28ViewToken && kpcV28ScoutingVisible()) setTimeout(kpcV28InjectStatus,0);
+    });
   }else if(kpcV28CurrentView.type==='list'){
-    kpcV28BaseOpenScouting().then(()=>setTimeout(kpcV28InjectStatus,0));
+    kpcV28BaseOpenScouting().then(()=>{
+      if(token===kpcV28ViewToken && kpcV28ScoutingVisible()) setTimeout(kpcV28InjectStatus,0);
+    });
   }
 }
+
+const kpcV28BaseCloseModal=window.closeModal;
+window.closeModal=function(){
+  kpcV28ClearView();
+  return kpcV28BaseCloseModal();
+};
+closeModal=window.closeModal;
+
+const kpcV28BaseNavigate=window.navigate;
+window.navigate=function(view){
+  kpcV28ClearView();
+  return kpcV28BaseNavigate(view);
+};
+navigate=window.navigate;
 
 window.kpcScoutSaveProfile=async function(id){
   const club=$('#sc_club')?.value.trim(), pseudo=$('#sc_pseudo')?.value.trim();
@@ -2498,9 +2538,9 @@ function kpcV28ScheduleRefresh(){
   kpcV28DebounceTimer=setTimeout(async()=>{
     try{
       await kpcV28LoadAll({migrate:false,silent:true});
-      if(!kpcV28Editing()){
+      if(kpcV28ScoutingVisible() && !kpcV28Editing()){
         kpcV28RenderCurrent();
-        if(kpcV28CurrentView.type==='list'||kpcV28CurrentView.type==='profile') toast('Scouting KPC mis à jour ✓');
+        if(kpcV28ScoutingVisible() && (kpcV28CurrentView.type==='list'||kpcV28CurrentView.type==='profile')) toast('Scouting KPC mis à jour ✓');
       }
     }catch(e){}
   },450);
