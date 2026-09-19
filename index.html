@@ -168,11 +168,74 @@ body{
 <style id="kpc-range-v19">
 .kpc-range-box{margin-top:10px}.kpc-range-card{padding:11px 12px;border:1px solid var(--line);border-radius:12px;margin:7px 0;background:#091b31}.kpc-range-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.kpc-range-head strong{color:var(--gold);white-space:nowrap}.kpc-range-note{font-size:.76rem;line-height:1.35;opacity:.68;margin-top:6px}
 </style>
-<style id="kpc-hand-v21">.kpc-undo{margin:8px 0 10px;width:auto;min-height:38px}.modal-head .kpc-undo{margin-left:auto;margin-right:8px;white-space:nowrap}</style><style id="kpc-v22-style">#installBtn{display:none!important}#kpcV22Modal{position:fixed;inset:0;z-index:2147483647;background:#061426;color:#fff;padding:20px;overflow:auto}#kpcV22Modal .box{max-width:620px;margin:5vh auto;background:#101a30;border:1px solid #d9b44a;border-radius:16px;padding:20px}#kpcV22Modal input{width:100%;box-sizing:border-box;margin:6px 0 12px;padding:11px;border-radius:8px;border:1px solid #777}#kpcV22Modal button{background:#0b1b3b;color:#d9b44a;border:1px solid #d9b44a;border-radius:10px;padding:10px 14px;font-weight:700}.hand,.user{border-bottom:1px solid #555;padding:12px 0}.muted{opacity:.75;font-size:.9em}.err{color:#ffb3b3}</style><meta name="apple-mobile-web-app-capable" content="yes">
+<style id="kpc-hand-v21">.kpc-undo{margin:8px 0 10px;width:auto;min-height:38px}.modal-head .kpc-undo{margin-left:auto;margin-right:8px;white-space:nowrap}</style><style id="kpc-action-equity-v23">
+.kpc-action-eq{margin:-2px 0 10px;padding:9px 11px;border-left:3px solid var(--gold);border-radius:0 10px 10px 0;background:rgba(217,180,74,.08)}
+.kpc-action-eq-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.9rem}
+.kpc-action-eq-head strong{color:var(--gold);font-size:1rem;white-space:nowrap}
+</style><style id="kpc-partial-solver-v24">
+.kpc-v24-finish{margin:12px 0;border-style:dashed!important}
+.kpc-v24-solver{margin:-2px 0 12px;padding:10px 11px;border-radius:11px;border:1px solid var(--line);background:#09182b}
+.kpc-v24-solver.good{border-left:4px solid #5fbf82}.kpc-v24-solver.mix{border-left:4px solid var(--gold)}.kpc-v24-solver.review{border-left:4px solid #d56a6a}
+.kpc-v24-solver-head{display:flex;flex-direction:column;gap:3px;margin-bottom:5px}.kpc-v24-solver-head strong{font-size:.9rem}
+.kpc-v24-review{margin-top:12px}
+</style><style id="kpc-finish-review-v25">
+.kpc-v25-ended-note{margin:0 0 14px;padding:10px 12px;border-radius:11px;border-left:4px solid var(--gold);background:rgba(217,180,74,.09)}
+</style><style id="kpc-v22-style">#installBtn{display:none!important}#kpcV22Modal{position:fixed;inset:0;z-index:2147483647;background:#061426;color:#fff;padding:20px;overflow:auto}#kpcV22Modal .box{max-width:620px;margin:5vh auto;background:#101a30;border:1px solid #d9b44a;border-radius:16px;padding:20px}#kpcV22Modal input{width:100%;box-sizing:border-box;margin:6px 0 12px;padding:11px;border-radius:8px;border:1px solid #777}#kpcV22Modal button{background:#0b1b3b;color:#d9b44a;border:1px solid #d9b44a;border-radius:10px;padding:10px 14px;font-weight:700}.hand,.user{border-bottom:1px solid #555;padding:12px 0}.muted{opacity:.75;font-size:.9em}.err{color:#ffb3b3}</style><style id="kpc-tells-v26">
+.dash-card.tells{border-color:#62c3a9;background:linear-gradient(155deg,#0b4a43,#071a25 72%)}
+.kpc-tell-rule{margin:12px 0 16px;padding:12px 13px;border:1px solid #d8ad3e88;border-radius:13px;background:#392f1238;color:#f2d27c;font-size:.9rem;line-height:1.45}
+.kpc-tell-method{display:grid;gap:7px;margin:12px 0 18px}
+.kpc-tell-method>div{display:grid;grid-template-columns:32px 1fr;gap:9px;align-items:center;padding:9px 10px;border:1px solid var(--line);border-radius:11px;background:#091d32}
+.kpc-tell-method>div>b{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#173c5b;color:var(--gold)}
+.kpc-tell-method span{display:flex;flex-direction:column}.kpc-tell-method small{color:var(--muted);margin-top:2px;line-height:1.3}
+.kpc-tell-detail{border:1px solid var(--line);border-radius:12px;background:#091c31;margin:8px 0;overflow:hidden}
+.kpc-tell-detail summary{list-style:none;display:grid;grid-template-columns:35px 1fr 20px;gap:8px;align-items:center;padding:11px;cursor:pointer}
+.kpc-tell-detail summary::-webkit-details-marker{display:none}.kpc-tell-detail summary div{display:flex;flex-direction:column}.kpc-tell-detail summary small{color:var(--muted);margin-top:2px}
+.kpc-tell-detail p{margin:0;padding:0 12px 10px;line-height:1.5;color:#d7e2ed}
+.kpc-tell-icon{font-size:24px}.kpc-tell-watch{margin:0 10px 10px;padding:9px;border-radius:9px;background:#0e2a46;color:#bcd0df;font-size:.78rem;line-height:1.4}
+.kpc-tell-title-space{margin-top:20px}
+.kpc-tell-combos{display:grid;gap:9px}
+.kpc-tell-combo{border:1px solid #315875;border-left:4px solid var(--gold);border-radius:12px;padding:11px;background:#081a2d}
+.kpc-tell-combo-head{display:flex;gap:9px;align-items:center}.kpc-tell-combo-head>span{font-size:25px}.kpc-tell-combo-head div{display:flex;flex-direction:column}.kpc-tell-combo-head small{color:var(--gold);margin-top:2px}
+.kpc-tell-combo p{font-size:.82rem;line-height:1.45;color:#c8d6e3;margin:8px 0 0}.kpc-tell-combo strong{color:#fff}
+</style><style id="kpc-scouting-v27">
+.dash-card.scouting{border-color:#efb84a;background:linear-gradient(155deg,#503513,#14180f 72%)}
+.kpc-scout-top{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.kpc-scout-top input{margin:0}
+.kpc-scout-clubchips{margin:12px 0;flex-wrap:nowrap;overflow:auto;padding-bottom:4px}.kpc-scout-clubchips .chip{white-space:nowrap}
+.kpc-scout-list{display:grid;gap:8px}.kpc-scout-card{display:grid;grid-template-columns:54px 1fr 18px;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:#091d32;cursor:pointer}
+.kpc-scout-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #d8ad3e88;background:#0d2b49}
+.kpc-scout-avatar.large{width:88px;height:88px}.kpc-scout-avatar.fallback{display:grid;place-items:center;font-size:22px;font-weight:900;color:var(--gold)}
+.kpc-scout-avatar.large.fallback{font-size:34px}.kpc-scout-card-main{min-width:0;display:flex;flex-direction:column}.kpc-scout-card-main>b{font-size:1.05rem}.kpc-scout-card-main small{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpc-scout-club{font-size:.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:.09em}.kpc-scout-arrow{font-size:27px;color:var(--gold)}
+.kpc-scout-mini{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}.kpc-scout-mini span{font-size:.62rem;border:1px solid #315875;border-radius:999px;padding:3px 5px;color:#bdd0df}
+.kpc-scout-edit-head{display:grid;grid-template-columns:110px 1fr;gap:13px;align-items:start}.kpc-scout-photo-pick{margin:0;text-align:center}.kpc-scout-photo-pick input{display:none}.kpc-scout-photo-pick button{margin-top:7px;width:100%;font-size:.68rem;padding:7px 5px}
+.kpc-scout-idfields label{margin-top:0}.kpc-scout-sliders{display:grid;grid-template-columns:1fr 1fr;gap:8px}.kpc-scout-slider{border:1px solid var(--line);border-radius:12px;padding:9px;margin:0;background:#091d32}.kpc-scout-slider>div{display:flex;justify-content:space-between;gap:8px}.kpc-scout-slider input{margin:7px 0 4px}.kpc-scout-slider small{display:flex;justify-content:space-between;color:var(--muted)}
+.kpc-scout-profile-head{display:flex;gap:14px;align-items:center;margin:4px 0 15px}.kpc-scout-profile-head p{margin:4px 0}.kpc-scout-profile-head small{color:var(--muted)}.kpc-scout-type{color:var(--gold);font-size:1.05rem}
+.kpc-scout-gauges{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}.kpc-scout-gauges>div{display:flex;justify-content:space-between;gap:8px;padding:8px 9px;border-radius:10px;background:#091d32;border:1px solid var(--line)}.kpc-scout-gauges span{font-size:.72rem;color:var(--muted)}.kpc-scout-gauges b{letter-spacing:2px;color:var(--gold);font-size:.72rem}
+.kpc-scout-tags{margin:9px 0 13px}.kpc-scout-block{margin:8px 0}.kpc-scout-block p{margin:6px 0 0;line-height:1.45}
+.kpc-scout-tell{border:1px solid #345d79;border-left:4px solid #60bfa8;border-radius:12px;padding:10px;margin:8px 0;background:#081a2d}.kpc-scout-tell-head{display:flex;justify-content:space-between;gap:8px}.kpc-scout-tell-head span{font-size:.72rem;color:var(--gold)}.kpc-scout-tell p{font-size:.8rem;line-height:1.42;margin:7px 0}.kpc-scout-tell small{color:var(--muted)}
+.kpc-scout-actions{margin-top:14px;flex-wrap:wrap}.kpc-check{display:flex;align-items:center;gap:8px}.kpc-check input{width:auto;margin:0}
+@media(max-width:520px){.kpc-scout-edit-head{grid-template-columns:90px 1fr}.kpc-scout-avatar.large{width:76px;height:76px}.kpc-scout-sliders{grid-template-columns:1fr}.kpc-scout-gauges{grid-template-columns:1fr}.kpc-scout-top{grid-template-columns:1fr}.kpc-scout-top .primary{width:100%}}
+</style><style id="kpc-scout-cloud-v28">
+.kpc-v28-sync{margin:0 0 12px;padding:7px 10px;border-radius:10px;border:1px solid var(--line);font-size:.72rem;text-align:center}
+.kpc-v28-sync.online{background:#0b342d;border-color:#3c987d;color:#bfe8dc}
+.kpc-v28-sync.syncing{background:#382f12;border-color:#a98532;color:#f0d47d}
+.kpc-v28-sync.offline{background:#3c1d25;border-color:#974d5d;color:#ffc0ca}
+</style><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="KPC Mental Game">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="logo.svg"></head>
+<link rel="apple-touch-icon" href="logo.svg">
+<style id="kpc-ios-pwa">
+html,body{min-height:100%;overscroll-behavior-y:none}
+body{padding-top:env(safe-area-inset-top)}
+.app{padding-bottom:calc(104px + env(safe-area-inset-bottom))!important}
+.bottom-nav{padding-bottom:calc(7px + env(safe-area-inset-bottom))!important}
+#kpcIosInstall{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:2147483000;background:#0a2139;color:#f7f3e8;border:1px solid #e5b84d;border-radius:16px;padding:14px 15px;box-shadow:0 12px 32px #0009;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+#kpcIosInstall b{color:#e5b84d;display:block;margin-bottom:5px}
+#kpcIosInstall p{margin:0 0 10px;line-height:1.4;font-size:14px}
+#kpcIosInstall button{width:100%;border:0;border-radius:10px;padding:10px;background:#e5b84d;color:#102038;font-weight:800}
+</style></head>
 <body>
 <div class="app">
 <header class="topbar">
@@ -209,6 +272,12 @@ body{
     </button>
     <button class="dash-card training" onclick="navigate('modules')">
       <span class="dash-icon">◇</span><b>FORMATION</b><small>Modules & fiches</small><em>Apprends. Entraîne-toi. Évolue.</em>
+    </button>
+    <button class="dash-card tells" onclick="openTellsModule()">
+      <span class="dash-icon">👁</span><b>TELLS</b><small>Lire les signaux</small><em>Observe. Recoupe. Confirme.</em>
+    </button>
+    <button class="dash-card scouting" onclick="openScouting()">
+      <span class="dash-icon">🎯</span><b>SCOUTING</b><small>Profils adverses</small><em>Club. Joueur. Tendances. Tells.</em>
     </button>
     <button class="dash-card journal" onclick="navigate('journal')">
       <span class="dash-icon">✎</span><b>JOURNAL</b><small>Mon suivi mental</small><em>Humeur, concentration, tilt, notes.</em>
@@ -1138,5 +1207,1392 @@ setTimeout(()=>{kpcEnsureUndoButton();kpcRestoreSavedDraft()},350);
 function kpcClearHandDraftSafety(){localStorage.removeItem(KPC_DRAFT_KEY);localStorage.removeItem(KPC_DRAFT_HISTORY);}
 window.kpcClearHandDraftSafety=kpcClearHandDraftSafety;
 
+
+// --- KPC v2.3 : équité préflop recalculée après chaque action ---
+const KPC_ACTION_EQUITY_V23 = true;
+const kpcActionEqCache = new Map();
+
+function kpcActionEqHash(str){
+  let h=2166136261>>>0;
+  for(let i=0;i<str.length;i++){ h^=str.charCodeAt(i); h=Math.imul(h,16777619); }
+  return h>>>0;
+}
+function kpcActionEqRandom(seed){
+  let a=seed>>>0;
+  return function(){
+    a+=0x6D2B79F5;
+    let t=a;
+    t=Math.imul(t^t>>>15,t|1);
+    t^=t+Math.imul(t^t>>>7,t|61);
+    return ((t^t>>>14)>>>0)/4294967296;
+  };
+}
+function kpcDraftAtAction(d,street,i){
+  const x=JSON.parse(JSON.stringify(d||{}));
+  x.actions=x.actions||{};
+  if(street==='Préflop'){
+    x.actions['Préflop']=(d.actions?.['Préflop']||[]).slice(0,i+1);
+  }
+  return x;
+}
+function kpcHeroVsActionRange(hero,d){
+  if(hero.length!==2) return null;
+  const pct=kpcTargetPct(d), classes=kpcRangeClasses(pct), blocked=new Set(hero);
+  const combos=classes.flatMap(c=>kpcExpandClass(c,blocked));
+  if(!combos.length) return null;
+  const deck0=allDeck().filter(c=>!blocked.has(c));
+  const key=JSON.stringify({hero,pct,bb:d.bb,hs:d.heroStack,vs:d.villainStack,vp:d.villainPos,acts:d.actions?.['Préflop']||[]});
+  if(kpcActionEqCache.has(key)) return kpcActionEqCache.get(key);
+  const rnd=kpcActionEqRandom(kpcActionEqHash(key));
+  let totalWeight=0; combos.forEach(x=>totalWeight+=x[2]);
+  let share=0,total=0;
+  const samples=2600;
+  for(let n=0;n<samples;n++){
+    let r=rnd()*totalWeight,pick=combos[combos.length-1];
+    for(const x of combos){ r-=x[2]; if(r<=0){ pick=x; break; } }
+    const vc=[pick[0],pick[1]];
+    const deck=deck0.filter(c=>!vc.includes(c));
+    const board=[];
+    for(let k=0;k<5;k++){
+      const j=k+Math.floor(rnd()*(deck.length-k));
+      [deck[k],deck[j]]=[deck[j],deck[k]];
+      board.push(deck[k]);
+    }
+    const hs=evalHoldem(hero.concat(board)),vs=evalHoldem(vc.concat(board));
+    const cmp=compareScore(hs,vs);
+    total++;
+    if(cmp>0) share++;
+    else if(cmp===0) share+=.5;
+  }
+  const out={equity:100*share/total,pct,action:kpcVillainAction(d),eff:kpcStackBB(d)};
+  kpcActionEqCache.set(key,out);
+  if(kpcActionEqCache.size>180) kpcActionEqCache.clear();
+  return out;
+}
+function kpcActionEquityHTML(street,i){
+  if(street!=='Préflop') return '';
+  const d=state.handDraft||{}, hero=(d.heroCards||[]).filter(Boolean);
+  const actions=d.actions?.['Préflop']||[];
+  const a=actions[i];
+  if(!a||hero.length!==2) return '';
+  const snap=kpcDraftAtAction(d,street,i);
+  const r=kpcHeroVsActionRange(hero,snap);
+  if(!r) return '';
+  const villain=kpcNormPos(d.villainPos||'')||'Vilain';
+  const actor=kpcNormPos(a.pos||'')||a.pos||'?';
+  const action=String(a.type||'Action');
+  const villainActed=(snap.actions?.['Préflop']||[]).some(x=>kpcNormPos(x.pos)===villain);
+  const title=villainActed
+    ? `Équité maintenant vs range de ${villain}`
+    : `Équité après ${actor} ${action}`;
+  const detail=villainActed
+    ? `${villain} • ${r.action} • range ≈ ${r.pct.toFixed(0)} % • ${r.eff.toFixed(0)} BB eff.`
+    : `${villain} • range de position ≈ ${r.pct.toFixed(0)} % • ${r.eff.toFixed(0)} BB eff.`;
+  return `<div class="kpc-action-eq">
+    <div class="kpc-action-eq-head"><span>${esc(title)}</span><strong>≈ ${r.equity.toFixed(1)} %</strong></div>
+    <div class="muted small">${esc(detail)}</div>
+  </div>`;
+}
+
+const kpcV23BaseActionRow=actionRow;
+actionRow=function(street,a,i){
+  return kpcV23BaseActionRow(street,a,i)+kpcActionEquityHTML(street,i);
+};
+window.actionRow=actionRow;
+
+const kpcV23BaseUpdateAct=updateAct;
+updateAct=function(street,i,k,v){
+  kpcV23BaseUpdateAct(street,i,k,v);
+  kpcActionEqCache.clear();
+  if(street==='Préflop') rerenderStreet(street);
+};
+window.updateAct=updateAct;
+
+
+// --- KPC v2.4 : arrêt/enregistrement à tout moment + analyseur de décisions préflop ---
+const KPC_PARTIAL_SOLVER_V24 = true;
+
+function kpcV24Num(v){ const n=Number(v); return Number.isFinite(n)?n:0; }
+function kpcV24NormType(v){ return String(v||'').toLowerCase().trim(); }
+function kpcV24IsAggressive(t){ t=kpcV24NormType(t); return t.includes('raise')||t.includes('3-bet')||t.includes('4-bet')||t.includes('5-bet')||t.includes('all-in')||t==='bet'; }
+
+function kpcV24EndStreet(d){
+  const r=d.actions?.River||[], t=d.actions?.Turn||[], f=d.actions?.Flop||[], p=d.actions?.['Préflop']||[];
+  if(r.length || d.board?.river) return 'River';
+  if(t.length || d.board?.turn) return 'Turn';
+  if(f.length || (d.board?.flop||[]).filter(Boolean).length) return 'Flop';
+  return p.length?'Préflop':'Contexte';
+}
+function kpcV24CollectVisible(){
+  const d=state.handDraft;
+  if(!d) return;
+  try{ if(typeof draftFromBase==='function') draftFromBase(); }catch(e){}
+  try{ if(typeof saveBoardDraft==='function' && ($('#f1')||$('#turnc')||$('#riverc'))) saveBoardDraft(); }catch(e){}
+  if($('#h_result')) d.result=$('#h_result').value;
+  if($('#h_potend')) d.potEnd=$('#h_potend').value;
+  if($('#h_mental')) d.mental=+$('#h_mental').value;
+  if($('#h_note')) d.note=$('#h_note').value;
+  if($('#h_status')) d.status=$('#h_status').value;
+  const chips=$$('.chip.selected');
+  if(chips.length) d.tags=chips.map(x=>x.dataset.tag).filter(Boolean);
+}
+function kpcV24SaveHand(stopHere=false){
+  const d=state.handDraft;
+  if(!d){ if(typeof toast==='function') toast('Aucune main en cours'); return; }
+  kpcV24CollectVisible();
+  d.tags=Array.isArray(d.tags)?d.tags:[];
+  d.status=d.status||'À revoir';
+  if(stopHere){
+    d.endedEarly=true;
+    d.endedAtStreet=kpcV24EndStreet(d);
+    d.endedAt=new Date().toISOString();
+    if(!d.result) d.result='Coup terminé avant showdown';
+    const tag='Fin '+d.endedAtStreet;
+    if(!d.tags.includes(tag)) d.tags.push(tag);
+  }else{
+    d.endedEarly=!!d.endedEarly;
+  }
+  state.hands.unshift(JSON.parse(JSON.stringify(d)));
+  store.set('kpc_hands',state.hands);
+  try{ if(typeof kpcClearHandDraftSafety==='function') kpcClearHandDraftSafety(); }catch(e){}
+  closeModal();
+  toast(stopHere?'Main arrêtée et enregistrée ✓':'Main enregistrée ✓');
+  renderHome();
+  navigate('hands');
+  return true;
+}
+window.saveHand=function(mode){ return kpcV24SaveHand(mode==='partial'); };
+saveHand=window.saveHand;
+
+function kpcV24InjectFinishButton(step){
+  const host=$('#modal-content');
+  if(!host || !state.handDraft || $('#kpc-v24-finish')) return;
+  const b=document.createElement('button');
+  b.id='kpc-v24-finish';
+  b.type='button';
+  b.className='secondary full kpc-v24-finish';
+  b.innerHTML='⏹ Terminer la main ici et enregistrer';
+  b.onclick=()=>saveHand('partial');
+  const rows=host.querySelectorAll('.row');
+  const anchor=rows.length?rows[rows.length-1]:null;
+  if(anchor) host.insertBefore(b,anchor); else host.appendChild(b);
+}
+
+function kpcV24HeroClass(cards){
+  if(!cards || cards.length!==2) return '';
+  const a=cards[0],b=cards[1], av=pokerRankValue(a[0]),bv=pokerRankValue(b[0]);
+  if(!av||!bv) return '';
+  if(av===bv) return a[0]+b[0];
+  const hi=av>bv?a:b, lo=av>bv?b:a;
+  return hi[0]+lo[0]+(hi.slice(1)===lo.slice(1)?'s':'o');
+}
+function kpcV24InTopRange(cards,pct){
+  const key=kpcV24HeroClass(cards);
+  if(!key) return false;
+  return kpcRangeClasses(Math.max(1,Math.min(65,pct))).some(c=>c.key===key);
+}
+function kpcV24OpeningPct(d){
+  const x=JSON.parse(JSON.stringify(d||{}));
+  x.villainPos=d.heroPos||'';
+  x.villainStack=d.heroStack||d.villainStack||'';
+  x.actions=x.actions||{};
+  x.actions['Préflop']=[];
+  return kpcTargetPct(x);
+}
+function kpcV24PotBefore(d,i){
+  const hero=kpcNormPos(d.heroPos||'');
+  const sb=kpcV24Num(d.sb), bb=kpcV24Num(d.bb), ante=kpcV24Num(d.ante);
+  const n=Math.max(2,kpcV24Num(d.playersAtTable)||2);
+  const contrib={SB:sb,BB:bb};
+  let pot=sb+bb+(ante*n), max=Math.max(sb,bb);
+  const acts=d.actions?.['Préflop']||[];
+  for(let j=0;j<i;j++){
+    const a=acts[j],pos=kpcNormPos(a.pos||''),type=kpcV24NormType(a.type),amt=kpcV24Num(a.amount);
+    if(!pos || type.includes('fold') || type.includes('check')) continue;
+    let target=0;
+    if(type.includes('call')) target=amt>0?amt:max;
+    else if(kpcV24IsAggressive(type)) target=amt>0?amt:max;
+    else continue;
+    const prev=contrib[pos]||0;
+    if(target<prev && amt>0 && type.includes('call')) target=prev+amt;
+    const inc=Math.max(0,target-prev);
+    contrib[pos]=prev+inc;
+    pot+=inc;
+    max=Math.max(max,contrib[pos]);
+  }
+  return {pot,contrib,max,toCall:Math.max(0,max-(contrib[hero]||0))};
+}
+function kpcV24BeforeAction(d,i){
+  const x=JSON.parse(JSON.stringify(d||{}));
+  x.actions=x.actions||{};
+  x.actions['Préflop']=(d.actions?.['Préflop']||[]).slice(0,i);
+  return x;
+}
+function kpcV24LastVillainAggression(d,i){
+  const vp=kpcNormPos(d.villainPos||'');
+  const acts=(d.actions?.['Préflop']||[]).slice(0,i);
+  for(let j=acts.length-1;j>=0;j--){
+    const a=acts[j];
+    if(kpcNormPos(a.pos)===vp && kpcV24IsAggressive(a.type)) return a;
+  }
+  return null;
+}
+function kpcV24AggressiveResponsePct(lastAgg,eff){
+  const t=kpcV24NormType(lastAgg?.type);
+  let pct=t.includes('4-bet')||t.includes('5-bet')?3.5:t.includes('3-bet')?5.5:10;
+  if(eff<=15) pct*=1.35;
+  if(eff<=8) pct*=1.35;
+  return Math.min(22,pct);
+}
+function kpcV24Verdict(kind,title,detail,extra){
+  return {kind,title,detail,extra:extra||''};
+}
+function kpcV24AnalysePreflop(d,i){
+  const acts=d.actions?.['Préflop']||[], a=acts[i];
+  if(!a || kpcNormPos(a.pos)!==kpcNormPos(d.heroPos)) return null;
+  const hero=(d.heroCards||[]).filter(Boolean);
+  if(hero.length!==2) return null;
+  const type=kpcV24NormType(a.type), before=kpcV24BeforeAction(d,i), lastAgg=kpcV24LastVillainAggression(d,i);
+  const ctx=kpcV24PotBefore(d,i);
+
+  if(!lastAgg){
+    const pct=kpcV24OpeningPct(d);
+    const inRange=kpcV24InTopRange(hero,pct);
+    const nearRange=kpcV24InTopRange(hero,Math.min(65,pct*1.22));
+    if(kpcV24IsAggressive(type)){
+      if(inRange) return kpcV24Verdict('good','Cohérent avec la range d’ouverture',`Main dans la range de référence ≈ ${pct.toFixed(0)} % depuis ${d.heroPos||'?'}.`,'Modèle cEV de référence.');
+      if(nearRange) return kpcV24Verdict('mix','Décision mixte / limite',`Main proche de la frontière d’ouverture ≈ ${pct.toFixed(0)} %.`,'Le stack, les profils et l’ICM peuvent faire varier la décision.');
+      return kpcV24Verdict('review','Move à revoir',`Main hors de la range d’ouverture de référence ≈ ${pct.toFixed(0)} %.`,'Une adaptation exploitante reste possible.');
+    }
+    if(type.includes('fold')){
+      if(!inRange) return kpcV24Verdict('good','Fold cohérent',`Main hors de la range d’ouverture de référence ≈ ${pct.toFixed(0)} %.`);
+      return kpcV24Verdict('review','Fold à revoir',`La main appartient à la range d’ouverture de référence ≈ ${pct.toFixed(0)} %.`);
+    }
+    return kpcV24Verdict('mix','Décision à contextualiser','Pas assez d’éléments pour trancher ce move d’ouverture.');
+  }
+
+  const r=kpcHeroVsActionRange(hero,before);
+  if(!r) return null;
+  const needed=ctx.toCall>0?100*ctx.toCall/(ctx.pot+ctx.toCall):0;
+  const margin=r.equity-needed;
+  const odds=ctx.toCall>0?`Équité ≈ ${r.equity.toFixed(1)} % • seuil pour call ≈ ${needed.toFixed(1)} %`:`Équité ≈ ${r.equity.toFixed(1)} %`;
+
+  if(type.includes('fold')){
+    if(ctx.toCall<=0) return kpcV24Verdict('mix','Fold inhabituel sans mise à payer',odds);
+    if(margin<-2.5) return kpcV24Verdict('good','Fold cohérent avec les cotes',odds,`Il manque ≈ ${Math.abs(margin).toFixed(1)} points d’équité pour un call direct.`);
+    if(margin<=2.5) return kpcV24Verdict('mix','Fold / call proche de la frontière',odds,'Spot potentiellement mixte selon ranges, ICM et profils.');
+    return kpcV24Verdict('review','Fold à revoir',odds,`L’équité dépasse le seuil direct d’environ ${margin.toFixed(1)} points.`);
+  }
+  if(type.includes('call')){
+    if(ctx.toCall<=0) return kpcV24Verdict('mix','Call à contextualiser',odds);
+    if(margin>2.5) return kpcV24Verdict('good','Call cohérent avec les cotes',odds,`Marge ≈ +${margin.toFixed(1)} points d’équité.`);
+    if(margin>=-2.5) return kpcV24Verdict('mix','Call proche de la frontière',odds,'Spot potentiellement mixte selon réalisation d’équité, ICM et profils.');
+    return kpcV24Verdict('review','Call à revoir',odds,`Déficit ≈ ${Math.abs(margin).toFixed(1)} points d’équité avant prise en compte de la réalisation.`);
+  }
+  if(kpcV24IsAggressive(type)){
+    const pct=kpcV24AggressiveResponsePct(lastAgg,r.eff);
+    const core=kpcV24InTopRange(hero,pct), fringe=kpcV24InTopRange(hero,Math.min(35,pct*1.55));
+    if(core) return kpcV24Verdict('good','Relance cohérente avec la range agressive',`Main dans une range agressive de référence ≈ ${pct.toFixed(1)} % • équité ≈ ${r.equity.toFixed(1)} %.`,'Le calcul ne modélise pas encore précisément la fold equity adverse.');
+    if(fringe) return kpcV24Verdict('mix','Relance mixte / bluff possible',`Main dans la zone périphérique de la range agressive ≈ ${pct.toFixed(1)} %.`,'Dépend fortement des bloqueurs, sizings et profils.');
+    return kpcV24Verdict('review','Relance à revoir',`Main hors de la range agressive de référence ≈ ${pct.toFixed(1)} % • équité ≈ ${r.equity.toFixed(1)} %.`,'Peut rester valable comme adaptation exploitante.');
+  }
+  return null;
+}
+function kpcV24SolverCard(street,i,d=state.handDraft){
+  if(street!=='Préflop' || !d) return '';
+  const x=kpcV24AnalysePreflop(d,i);
+  if(!x) return '';
+  const icon=x.kind==='good'?'✓':x.kind==='mix'?'≈':'!';
+  return `<div class="kpc-v24-solver ${x.kind}">
+    <div class="kpc-v24-solver-head"><b>${icon} Analyse du move</b><strong>${esc(x.title)}</strong></div>
+    <div class="small">${esc(x.detail)}</div>
+    ${x.extra?`<div class="muted small">${esc(x.extra)}</div>`:''}
+  </div>`;
+}
+function kpcV24SavedSolverHTML(d){
+  const acts=d.actions?.['Préflop']||[];
+  const rows=acts.map((a,i)=>kpcNormPos(a.pos)===kpcNormPos(d.heroPos)?kpcV24SolverCard('Préflop',i,d):'').filter(Boolean);
+  if(!rows.length) return '';
+  return `<div class="toolbox kpc-v24-review"><b>Analyseur de décisions • préflop</b>
+    <p class="muted small">Lecture pédagogique cEV à partir des ranges de référence, de l’équité et des cotes du pot. Ce n’est pas un solveur Nash/ICM complet.</p>
+    ${rows.join('')}
+  </div>`;
+}
+
+const kpcV24BaseActionRow=actionRow;
+actionRow=function(street,a,i){
+  return kpcV24BaseActionRow(street,a,i)+kpcV24SolverCard(street,i);
+};
+window.actionRow=actionRow;
+
+const kpcV24BaseEquityHistory=equityHistoryHTML;
+equityHistoryHTML=function(d){
+  const base=typeof kpcV24BaseEquityHistory==='function'?kpcV24BaseEquityHistory(d):'';
+  return base+kpcV24SavedSolverHTML(d);
+};
+window.equityHistoryHTML=equityHistoryHTML;
+
+const kpcV24BaseRenderHandWizard=window.renderHandWizard;
+window.renderHandWizard=function(step){
+  const r=kpcV24BaseRenderHandWizard(step);
+  setTimeout(()=>kpcV24InjectFinishButton(step),0);
+  return r;
+};
+renderHandWizard=window.renderHandWizard;
+
+
+// --- KPC v2.5 : le bouton "fin du coup" bascule vers l'écran final au lieu d'enregistrer immédiatement ---
+const KPC_FINISH_REVIEW_V25 = true;
+
+function kpcV25RestoreFinalFields(){
+  const d=state.handDraft||{};
+  if($('#h_result') && d.result){
+    const values=Array.from($('#h_result').options||[]).map(o=>o.value||o.textContent);
+    if(values.includes(d.result)) $('#h_result').value=d.result;
+  }
+  if($('#h_potend') && d.potEnd!=null) $('#h_potend').value=d.potEnd;
+  if($('#h_mental') && d.mental!=null){
+    $('#h_mental').value=d.mental;
+    const v=$('#h_mental').nextElementSibling;
+    if(v) v.textContent=d.mental+'/5';
+  }
+  if($('#h_note') && d.note!=null) $('#h_note').value=d.note;
+  if($('#h_status') && d.status){
+    const values=Array.from($('#h_status').options||[]).map(o=>o.value||o.textContent);
+    if(values.includes(d.status)) $('#h_status').value=d.status;
+  }
+  $$('.chip').forEach(ch=>{
+    ch.classList.toggle('selected',Array.isArray(d.tags)&&d.tags.includes(ch.dataset.tag));
+  });
+
+  const host=$('#modal-content');
+  if(host && d.endedEarly && !$('#kpc-v25-ended-note')){
+    const note=document.createElement('div');
+    note.id='kpc-v25-ended-note';
+    note.className='kpc-v25-ended-note';
+    note.innerHTML='<b>⏹ Coup terminé au '+esc(d.endedAtStreet||'point choisi')+'</b><div class="muted small">Complète maintenant le résultat, tes notes et ton état mental, puis enregistre la main.</div>';
+    const head=host.querySelector('.modal-head');
+    if(head) head.insertAdjacentElement('afterend',note);
+    else host.prepend(note);
+  }
+}
+
+function kpcV25GoToFinal(step){
+  const d=state.handDraft;
+  if(!d){ if(typeof toast==='function') toast('Aucune main en cours'); return; }
+
+  try{
+    if(typeof kpcV24CollectVisible==='function') kpcV24CollectVisible();
+    else {
+      if(step===0 && typeof draftFromBase==='function') draftFromBase();
+      if(step===2 && typeof saveBoardDraft==='function') saveBoardDraft();
+    }
+  }catch(e){ console.warn('KPC v2.5 collecte finale',e); }
+
+  d.tags=Array.isArray(d.tags)?d.tags:[];
+  d.endedEarly=true;
+  d.endedAtStreet=(typeof kpcV24EndStreet==='function')?kpcV24EndStreet(d):(step===1?'Préflop':'Postflop');
+  d.endedAt=new Date().toISOString();
+
+  const acts=d.actions?.[d.endedAtStreet]||[];
+  const hero=kpcNormPos(d.heroPos||'');
+  const lastHero=[...acts].reverse().find(a=>kpcNormPos(a.pos||'')===hero);
+  if(lastHero && String(lastHero.type||'').toLowerCase().includes('fold')){
+    d.result='Fold avant showdown';
+  }
+
+  const tag='Fin '+d.endedAtStreet;
+  if(!d.tags.includes(tag)) d.tags.push(tag);
+
+  renderHandWizard(3);
+}
+
+kpcV24InjectFinishButton=function(step){
+  const host=$('#modal-content');
+  if(!host || !state.handDraft || $('#kpc-v24-finish') || step===3) return;
+  if(step!==1 && step!==2) return;
+
+  const b=document.createElement('button');
+  b.id='kpc-v24-finish';
+  b.type='button';
+  b.className='secondary full kpc-v24-finish';
+  b.innerHTML='⏭ Fin du coup → notes et enregistrement';
+  b.onclick=()=>kpcV25GoToFinal(step);
+
+  const rows=host.querySelectorAll('.row');
+  const anchor=rows.length?rows[rows.length-1]:null;
+  if(anchor) host.insertBefore(b,anchor);
+  else host.appendChild(b);
+};
+window.kpcV24InjectFinishButton=kpcV24InjectFinishButton;
+
+const kpcV25BaseRenderHandWizard=window.renderHandWizard;
+window.renderHandWizard=function(step){
+  const r=kpcV25BaseRenderHandWizard(step);
+  if(step===3) setTimeout(kpcV25RestoreFinalFields,0);
+  return r;
+};
+renderHandWizard=window.renderHandWizard;
+
 </script>
-<script>window.KPC_V22=true;(()=>{const U='https://xfutvyvvhlhpeowtgfbq.supabase.co',K='sb_publishable__6uNHhAsZQ-RF21RTLE31g_A2CukL8j',S='kpc_v22_session';let session=null,prof=null;const $=id=>document.getElementById(id),e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function modal(h){let m=$('kpcV22Modal');if(!m){m=document.createElement('div');m.id='kpcV22Modal';document.body.appendChild(m)}m.innerHTML='<div class="box">'+h+'</div>';return m}const close=()=>$('kpcV22Modal')?.remove();async function api(path,o={}){let h={'apikey':K,'Content-Type':'application/json',...(o.headers||{})};if(session?.access_token)h.Authorization='Bearer '+session.access_token;let r=await fetch(U+path,{...o,headers:h}),d=null;try{d=await r.json()}catch{}if(!r.ok)throw Error(d?.msg||d?.message||d?.error_description||'Erreur '+r.status);return d}function store(x){session=x;localStorage.setItem(S,JSON.stringify(x))}async function profile(){return (await api('/rest/v1/profiles?select=id,display_name,approved,role&id=eq.'+encodeURIComponent(session.user.id)))?.[0]}async function approved(){prof=await profile();if(!prof)throw Error('Profil KPC introuvable.');if(!prof.approved)throw Error('Compte en attente de validation par un administrateur.');return prof}function signup(){modal('<h2>Créer mon compte KPC</h2><p>Crée ton compte personnel. Il devra ensuite être validé par un administrateur du club.</p><label>Pseudo / nom</label><input id="kpcName"><label>E-mail</label><input id="kpcEmail" type="email"><label>Mot de passe (6 caractères minimum)</label><input id="kpcPassword" type="password"><button id="kpcSignupGo">Créer mon compte</button> <button id="kpcBack">Retour</button><p id="kpcMsg" class="err"></p>');$('kpcBack').onclick=login;$('kpcSignupGo').onclick=async()=>{let msg=$('kpcMsg');msg.textContent='Création…';try{let n=$('kpcName').value.trim(),email=$('kpcEmail').value.trim(),password=$('kpcPassword').value;if(!n)throw Error('Indique ton pseudo ou ton nom.');if(!email)throw Error('Indique ton adresse e-mail.');if(password.length<6)throw Error('Le mot de passe doit contenir au moins 6 caractères.');let x=await api('/auth/v1/signup',{method:'POST',body:JSON.stringify({email,password,data:{display_name:n}})});if(x?.access_token)store(x);modal('<h2>Compte créé ✅</h2><p>Ton compte est maintenant en attente de validation par un administrateur KPC.</p><button id="kpcReturn">Retour à la connexion</button>');$('kpcReturn').onclick=()=>{localStorage.removeItem(S);session=null;login()}}catch(x){msg.textContent=x.message}}}function login(){modal('<h2>KPC Mental Game</h2><p>Connecte-toi avec ton compte KPC.</p><label>E-mail</label><input id="kpcEmail" type="email"><label>Mot de passe</label><input id="kpcPassword" type="password"><button id="kpcLoginGo">Se connecter</button> <button id="kpcNew">Créer un compte</button><p id="kpcMsg" class="err"></p>');$('kpcNew').onclick=signup;$('kpcLoginGo').onclick=async()=>{let msg=$('kpcMsg');msg.textContent='Connexion…';try{store(await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:$('kpcEmail').value.trim(),password:$('kpcPassword').value})}));await approved();close();integrate()}catch(x){msg.textContent=x.message}}}function logout(){session=prof=null;localStorage.removeItem(S);login()}function snapshot(){if(typeof window.kpcDraftSnapshot==='function')return window.kpcDraftSnapshot();return{fields:[...document.querySelectorAll('input,select,textarea')].filter(x=>x.id||x.name).map(x=>({id:x.id,name:x.name,value:x.value,checked:x.checked,type:x.type}))}}function restore(d){if(typeof window.kpcRestoreDraft==='function')return window.kpcRestoreDraft(d);for(let f of d?.fields||[]){let q=f.id?$(f.id):document.querySelector('[name="'+CSS.escape(f.name)+'"]');if(q){if(/checkbox|radio/.test(f.type))q.checked=!!f.checked;else q.value=f.value??''}}}async function cloudSave(){try{await approved();let d=snapshot(),title='Main '+new Date().toLocaleString();await api('/rest/v1/mental_game_hands',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({user_id:session.user.id,title,hand_data:d,played_at:new Date().toISOString()})});return true}catch(x){console.warn('KPC cloud save:',x.message);return false}}async function list(){try{await approved();let a=await api('/rest/v1/mental_game_hands?select=id,title,hand_data,played_at,review_status&user_id=eq.'+encodeURIComponent(session.user.id)+'&order=played_at.desc');modal('<h2>Mes mains sauvegardées</h2>'+(a.length?a.map((h,i)=>'<div class="hand"><b>'+e(h.title||'Main sans titre')+'</b><div class="muted">'+e(new Date(h.played_at).toLocaleString())+'</div><button data-open="'+i+'">Ouvrir</button> <button data-del="'+e(h.id)+'">Supprimer</button></div>').join(''):'<p>Aucune main enregistrée.</p>')+'<br><button id="kpcClose">Fermer</button>');$('kpcClose').onclick=close;document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{restore(a[+b.dataset.open].hand_data);close()});document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{if(confirm('Supprimer cette main ?')){await api('/rest/v1/mental_game_hands?id=eq.'+encodeURIComponent(b.dataset.del)+'&user_id=eq.'+encodeURIComponent(session.user.id),{method:'DELETE'});list()}})}catch(x){alert(x.message)}}async function users(){try{await approved();if(prof.role!=='admin')throw Error('Accès administrateur requis.');let a=await api('/rest/v1/profiles?select=id,display_name,approved,role&order=display_name.asc');modal('<h2>Gestion des comptes</h2>'+a.map(u=>'<div class="user"><b>'+e(u.display_name||'Sans nom')+'</b> — '+(u.approved?'Validé':'En attente')+(u.id===session.user.id?' (vous)':u.role!=='admin'?' <button data-user="'+e(u.id)+'">'+(u.approved?'Suspendre':'Valider')+'</button>':'')+'</div>').join('')+'<br><button id="kpcClose">Fermer</button>');$('kpcClose').onclick=close;document.querySelectorAll('[data-user]').forEach(b=>b.onclick=async()=>{let u=a.find(z=>z.id===b.dataset.user);if(!u)return;await api('/rest/v1/profiles?id=eq.'+encodeURIComponent(u.id),{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({approved:!u.approved})});users()})}catch(x){alert(x.message)}}function integrate(){document.querySelectorAll('#kpcV22Bar').forEach(x=>x.remove());let ib=$('installBtn');if(ib)ib.style.display='none';let hands=document.querySelector('.bottom-nav .nav-btn[data-view="hands"]');if(hands&&!hands.dataset.kpcLabel){hands.dataset.kpcLabel='1';for(let n of hands.childNodes){if(n.nodeType===3&&n.textContent.trim()==='Mains')n.textContent='Mes mains'}}if(typeof window.saveHand==='function'&&!window.saveHand.__kpcCloud){let orig=window.saveHand;let wrapped=function(){let r=orig.apply(this,arguments);setTimeout(()=>cloudSave(),0);return r};wrapped.__kpcCloud=true;window.saveHand=wrapped}window.kpcV22Users=users;window.kpcV22Logout=logout;window.kpcV22CloudHands=list;if(typeof window.openModal==='function'){window.openMoreMenu=function(){let admin=prof?.role==='admin'?'<button class="secondary full" onclick="closeModal();kpcV22Users()">👥 Gestion des comptes</button>':'';openModal('<div class="modal-head"><div><span class="eyebrow">KPC Mental Game</span><h2>Plus</h2></div><button class="icon-btn" onclick="closeModal()">✕</button></div><button class="secondary full" onclick="closeModal();navigate(\'journal\')">✎ Journal mental</button><button class="secondary full" onclick="closeModal();navigate(\'stats\')">▥ Sauvegarde & progression</button><button class="secondary full" onclick="closeModal();openCoachMode()">♚ Mode Coach</button><button class="secondary full" onclick="closeModal();kpcV22CloudHands()">🂡 Mes mains sauvegardées</button>'+admin+'<button class="secondary full" onclick="closeModal();kpcV22Logout()">⇥ Déconnexion</button>')}} }async function init(){try{session=JSON.parse(localStorage.getItem(S)||'null')}catch{}if(!session?.access_token){login();return}try{await approved();integrate()}catch(x){if(x.message.includes('attente')){modal('<h2>Compte en attente ⏳</h2><p>Un administrateur KPC doit encore valider ton compte.</p><button id="kpcRetry">Réessayer</button> <button id="kpcLogout">Déconnexion</button>');$('kpcRetry').onclick=init;$('kpcLogout').onclick=logout}else login()}}function boot(){if(document.body)init();else document.addEventListener('DOMContentLoaded',init,{once:true})}boot()})();</script><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script></body></html>
+<script>window.KPC_V22=true;(()=>{const U='https://xfutvyvvhlhpeowtgfbq.supabase.co',K='sb_publishable__6uNHhAsZQ-RF21RTLE31g_A2CukL8j',S='kpc_v22_session';let session=null,prof=null;const $=id=>document.getElementById(id),e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function modal(h){let m=$('kpcV22Modal');if(!m){m=document.createElement('div');m.id='kpcV22Modal';document.body.appendChild(m)}m.innerHTML='<div class="box">'+h+'</div>';return m}const close=()=>$('kpcV22Modal')?.remove();async function api(path,o={}){let h={'apikey':K,'Content-Type':'application/json',...(o.headers||{})};if(session?.access_token)h.Authorization='Bearer '+session.access_token;let r=await fetch(U+path,{...o,headers:h}),d=null;try{d=await r.json()}catch{}if(!r.ok)throw Error(d?.msg||d?.message||d?.error_description||'Erreur '+r.status);return d}function store(x){session=x;localStorage.setItem(S,JSON.stringify(x))}async function profile(){return (await api('/rest/v1/profiles?select=id,display_name,approved,role&id=eq.'+encodeURIComponent(session.user.id)))?.[0]}async function approved(){prof=await profile();if(!prof)throw Error('Profil KPC introuvable.');if(!prof.approved)throw Error('Compte en attente de validation par un administrateur.');return prof}function signup(){modal('<h2>Créer mon compte KPC</h2><p>Crée ton compte personnel. Il devra ensuite être validé par un administrateur du club.</p><label>Pseudo / nom</label><input id="kpcName"><label>E-mail</label><input id="kpcEmail" type="email"><label>Mot de passe (6 caractères minimum)</label><input id="kpcPassword" type="password"><button id="kpcSignupGo">Créer mon compte</button> <button id="kpcBack">Retour</button><p id="kpcMsg" class="err"></p>');$('kpcBack').onclick=login;$('kpcSignupGo').onclick=async()=>{let msg=$('kpcMsg');msg.textContent='Création…';try{let n=$('kpcName').value.trim(),email=$('kpcEmail').value.trim(),password=$('kpcPassword').value;if(!n)throw Error('Indique ton pseudo ou ton nom.');if(!email)throw Error('Indique ton adresse e-mail.');if(password.length<6)throw Error('Le mot de passe doit contenir au moins 6 caractères.');let x=await api('/auth/v1/signup',{method:'POST',body:JSON.stringify({email,password,data:{display_name:n}})});if(x?.access_token)store(x);modal('<h2>Compte créé ✅</h2><p>Ton compte est maintenant en attente de validation par un administrateur KPC.</p><button id="kpcReturn">Retour à la connexion</button>');$('kpcReturn').onclick=()=>{localStorage.removeItem(S);session=null;login()}}catch(x){msg.textContent=x.message}}}function login(){modal('<h2>KPC Mental Game</h2><p>Connecte-toi avec ton compte KPC.</p><label>E-mail</label><input id="kpcEmail" type="email"><label>Mot de passe</label><input id="kpcPassword" type="password"><button id="kpcLoginGo">Se connecter</button> <button id="kpcNew">Créer un compte</button><p id="kpcMsg" class="err"></p>');$('kpcNew').onclick=signup;$('kpcLoginGo').onclick=async()=>{let msg=$('kpcMsg');msg.textContent='Connexion…';try{store(await api('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:$('kpcEmail').value.trim(),password:$('kpcPassword').value})}));await approved();close();integrate()}catch(x){msg.textContent=x.message}}}function logout(){session=prof=null;localStorage.removeItem(S);login()}function snapshot(){if(typeof window.kpcDraftSnapshot==='function')return window.kpcDraftSnapshot();return{fields:[...document.querySelectorAll('input,select,textarea')].filter(x=>x.id||x.name).map(x=>({id:x.id,name:x.name,value:x.value,checked:x.checked,type:x.type}))}}function restore(d){if(typeof window.kpcRestoreDraft==='function')return window.kpcRestoreDraft(d);for(let f of d?.fields||[]){let q=f.id?$(f.id):document.querySelector('[name="'+CSS.escape(f.name)+'"]');if(q){if(/checkbox|radio/.test(f.type))q.checked=!!f.checked;else q.value=f.value??''}}}async function cloudSave(){try{await approved();let d=snapshot(),title='Main '+new Date().toLocaleString();await api('/rest/v1/mental_game_hands',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({user_id:session.user.id,title,hand_data:d,played_at:new Date().toISOString()})});return true}catch(x){console.warn('KPC cloud save:',x.message);return false}}async function list(){try{await approved();let a=await api('/rest/v1/mental_game_hands?select=id,title,hand_data,played_at,review_status&user_id=eq.'+encodeURIComponent(session.user.id)+'&order=played_at.desc');modal('<h2>Mes mains sauvegardées</h2>'+(a.length?a.map((h,i)=>'<div class="hand"><b>'+e(h.title||'Main sans titre')+'</b><div class="muted">'+e(new Date(h.played_at).toLocaleString())+'</div><button data-open="'+i+'">Ouvrir</button> <button data-del="'+e(h.id)+'">Supprimer</button></div>').join(''):'<p>Aucune main enregistrée.</p>')+'<br><button id="kpcClose">Fermer</button>');$('kpcClose').onclick=close;document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{restore(a[+b.dataset.open].hand_data);close()});document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{if(confirm('Supprimer cette main ?')){await api('/rest/v1/mental_game_hands?id=eq.'+encodeURIComponent(b.dataset.del)+'&user_id=eq.'+encodeURIComponent(session.user.id),{method:'DELETE'});list()}})}catch(x){alert(x.message)}}async function users(){try{await approved();if(prof.role!=='admin')throw Error('Accès administrateur requis.');let a=await api('/rest/v1/profiles?select=id,display_name,approved,role&order=display_name.asc');modal('<h2>Gestion des comptes</h2>'+a.map(u=>'<div class="user"><b>'+e(u.display_name||'Sans nom')+'</b> — '+(u.approved?'Validé':'En attente')+(u.id===session.user.id?' (vous)':u.role!=='admin'?' <button data-user="'+e(u.id)+'">'+(u.approved?'Suspendre':'Valider')+'</button>':'')+'</div>').join('')+'<br><button id="kpcClose">Fermer</button>');$('kpcClose').onclick=close;document.querySelectorAll('[data-user]').forEach(b=>b.onclick=async()=>{let u=a.find(z=>z.id===b.dataset.user);if(!u)return;await api('/rest/v1/profiles?id=eq.'+encodeURIComponent(u.id),{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({approved:!u.approved})});users()})}catch(x){alert(x.message)}}function integrate(){document.querySelectorAll('#kpcV22Bar').forEach(x=>x.remove());let ib=$('installBtn');if(ib)ib.style.display='none';let hands=document.querySelector('.bottom-nav .nav-btn[data-view="hands"]');if(hands&&!hands.dataset.kpcLabel){hands.dataset.kpcLabel='1';for(let n of hands.childNodes){if(n.nodeType===3&&n.textContent.trim()==='Mains')n.textContent='Mes mains'}}if(typeof window.saveHand==='function'&&!window.saveHand.__kpcCloud){let orig=window.saveHand;let wrapped=function(){let r=orig.apply(this,arguments);setTimeout(()=>cloudSave(),0);return r};wrapped.__kpcCloud=true;window.saveHand=wrapped}window.kpcV22Users=users;window.kpcV22Logout=logout;window.kpcV22CloudHands=list;if(typeof window.openModal==='function'){window.openMoreMenu=function(){let admin=prof?.role==='admin'?'<button class="secondary full" onclick="closeModal();kpcV22Users()">👥 Gestion des comptes</button>':'';openModal('<div class="modal-head"><div><span class="eyebrow">KPC Mental Game</span><h2>Plus</h2></div><button class="icon-btn" onclick="closeModal()">✕</button></div><button class="secondary full" onclick="closeModal();navigate(\'journal\')">✎ Journal mental</button><button class="secondary full" onclick="closeModal();navigate(\'stats\')">▥ Sauvegarde & progression</button><button class="secondary full" onclick="closeModal();openCoachMode()">♚ Mode Coach</button><button class="secondary full" onclick="closeModal();kpcV22CloudHands()">🂡 Mes mains sauvegardées</button>'+admin+'<button class="secondary full" onclick="closeModal();kpcV22Logout()">⇥ Déconnexion</button>')}} }async function init(){try{session=JSON.parse(localStorage.getItem(S)||'null')}catch{}if(!session?.access_token){login();return}try{await approved();integrate()}catch(x){if(x.message.includes('attente')){modal('<h2>Compte en attente ⏳</h2><p>Un administrateur KPC doit encore valider ton compte.</p><button id="kpcRetry">Réessayer</button> <button id="kpcLogout">Déconnexion</button>');$('kpcRetry').onclick=init;$('kpcLogout').onclick=logout}else login()}}function boot(){if(document.body)init();else document.addEventListener('DOMContentLoaded',init,{once:true})}boot()})();
+// --- KPC v2.6 : module pédagogique TELLS ---
+const KPC_TELLS_V26 = true;
+
+const kpcTellFamilies=[
+  {
+    icon:'⏱️',title:'Timing',subtitle:'Vitesse et rythme de décision',
+    text:'Observe surtout les changements par rapport au rythme habituel du joueur : snap action, tank inhabituel, pause avant de miser, ou décision prise avant même que l’action arrive.',
+    watch:'À recouper avec le sizing, la position et les habitudes déjà observées.'
+  },
+  {
+    icon:'🧍',title:'Posture',subtitle:'Corps, tension et immobilité',
+    text:'Changement soudain de posture, immobilité inhabituelle, recul, rapprochement de la table, épaules ou bras plus tendus : ce sont des variations d’état, pas des preuves de force ou de faiblesse.',
+    watch:'La déviation par rapport au comportement normal vaut plus que le geste lui-même.'
+  },
+  {
+    icon:'🪙',title:'Mains & jetons',subtitle:'Manipulation, comptage, préparation',
+    text:'Regarde comment le joueur manipule ses jetons, prépare une mise, protège ses cartes ou recompte son stack. Une modification nette de sa routine peut signaler une décision plus chargée émotionnellement.',
+    watch:'Ne confonds pas nervosité générale et information liée à la main.'
+  },
+  {
+    icon:'🫁',title:'Respiration & voix',subtitle:'Souffle, débit, volume',
+    text:'Respiration retenue ou accélérée, déglutition, voix plus basse, plus rapide ou soudainement différente : ces indices peuvent révéler de l’activation émotionnelle.',
+    watch:'Activation émotionnelle ne veut pas dire automatiquement bluff.'
+  },
+  {
+    icon:'👀',title:'Regard & attention',subtitle:'Où va l’attention ?',
+    text:'Observe les ruptures : regard répété vers ton stack, le pot, les cartes ou un joueur précis. L’important est le changement de comportement et le moment où il survient.',
+    watch:'Évite les règles simplistes du type “il regarde à gauche = il bluffe”.'
+  },
+  {
+    icon:'💬',title:'Parole',subtitle:'Silence, bavardage, justification',
+    text:'Un joueur très bavard qui devient silencieux — ou l’inverse — peut mériter ton attention. Les explications non sollicitées, questions ou tentatives d’influencer ta décision sont surtout intéressantes si elles sont inhabituelles.',
+    watch:'Compare toujours avec sa manière normale de parler.'
+  },
+  {
+    icon:'📏',title:'Sizing + comportement',subtitle:'Le combo le plus utile',
+    text:'Un changement de sizing accompagné d’un changement de timing ou de posture est souvent plus intéressant qu’un tell physique isolé.',
+    watch:'Le betting pattern reste généralement plus exploitable que le langage corporel seul.'
+  }
+];
+
+const kpcTellCombos=[
+  {
+    icon:'🧊',name:'Immobilité + souffle modifié + gros bet',
+    signal:'Le joueur devient soudain très immobile, sa respiration change et il utilise un sizing important ou inhabituel.',
+    orient:'Hypothèse : forte activation émotionnelle. Cherche ensuite si ce profil a déjà montré ce cluster en value ou en bluff.',
+    level:'Cluster fort à noter'
+  },
+  {
+    icon:'🎭',name:'Parole inhabituelle + regard sur ton stack + sizing atypique',
+    signal:'Le joueur change soudain son niveau de parole, vérifie ton stack et choisit une taille de mise inhabituelle.',
+    orient:'Hypothèse : tentative d’influence ou décision à fort enjeu. Ne décide pas “bluff/value” sans historique.',
+    level:'Très intéressant avec historique'
+  },
+  {
+    icon:'🧮',name:'Tank + recomptage + hésitation de jetons',
+    signal:'Temps de réflexion inhabituel, stack recompté plusieurs fois et préparation/abandon de jetons.',
+    orient:'Hypothèse : vraie zone de décision ou construction du sizing. Compare avec ses tanks précédents et la cohérence de sa ligne.',
+    level:'Bon signal de difficulté'
+  },
+  {
+    icon:'⚡',name:'Snap action + sizing standard + corps inchangé',
+    signal:'Décision immédiate, sizing habituel, aucune rupture visible de posture ou de respiration.',
+    orient:'Hypothèse : action préparée ou décision facile pour ce joueur. C’est souvent un cluster plus “routine” qu’émotionnel.',
+    level:'Faible charge apparente'
+  },
+  {
+    icon:'🫨',name:'Tremblement + respiration + manipulation différente',
+    signal:'Les mains tremblent davantage, le souffle change et la manipulation des jetons devient différente.',
+    orient:'Hypothèse : adrénaline / excitation. Cela peut accompagner une très grosse main comme un bluff : valide au showdown avant de l’utiliser.',
+    level:'Arousal, direction incertaine'
+  },
+  {
+    icon:'🔁',name:'Rupture de routine sur plusieurs streets',
+    signal:'Le même joueur change de rythme, posture ou parole exactement quand le pot grossit, puis revient à sa routine après l’action.',
+    orient:'Hypothèse : cluster personnel reproductible. C’est ce type de répétition qu’il faut mémoriser.',
+    level:'Le plus précieux à long terme'
+  }
+];
+
+function kpcTellFamilyHTML(x){
+  return `<details class="kpc-tell-detail">
+    <summary><span class="kpc-tell-icon">${x.icon}</span><div><b>${esc(x.title)}</b><small>${esc(x.subtitle)}</small></div><span>＋</span></summary>
+    <p>${esc(x.text)}</p>
+    <div class="kpc-tell-watch">🎯 ${esc(x.watch)}</div>
+  </details>`;
+}
+function kpcTellComboHTML(x){
+  return `<article class="kpc-tell-combo">
+    <div class="kpc-tell-combo-head"><span>${x.icon}</span><div><b>${esc(x.name)}</b><small>${esc(x.level)}</small></div></div>
+    <p><strong>Ce que tu vois :</strong> ${esc(x.signal)}</p>
+    <p><strong>Comment t’orienter :</strong> ${esc(x.orient)}</p>
+  </article>`;
+}
+
+function openTellsModule(){
+  const html=`<div class="modal-head"><div><span class="eyebrow">Observation live</span><h2>👁 Tells Poker</h2></div><button class="icon-btn" onclick="closeModal()">✕</button></div>
+  <p class="lead">Un tell est un <b>indice</b>, jamais une preuve. La bonne lecture vient d’un <b>changement par rapport au comportement habituel</b>, renforcé par plusieurs signaux et par le contexte de la main.</p>
+
+  <div class="kpc-tell-rule">
+    <b>La règle KPC : 1 tell = rien • 2 tells = hypothèse • 3 signaux cohérents + historique = information exploitable</b>
+  </div>
+
+  <div class="kpc-tell-method">
+    <div><b>1</b><span><strong>Baseline</strong><small>Comment joue-t-il quand rien de spécial ne se passe ?</small></span></div>
+    <div><b>2</b><span><strong>Déviation</strong><small>Qu’est-ce qui vient de changer ?</small></span></div>
+    <div><b>3</b><span><strong>Cluster</strong><small>Y a-t-il 2 ou 3 signaux au même moment ?</small></span></div>
+    <div><b>4</b><span><strong>Contexte</strong><small>Sizing, position, stack, action précédente.</small></span></div>
+    <div><b>5</b><span><strong>Validation</strong><small>Showdown ou répétition future avant d’en faire une règle.</small></span></div>
+  </div>
+
+  <h3>Qu’est-ce que je peux regarder ?</h3>
+  <div class="kpc-tell-families">${kpcTellFamilies.map(kpcTellFamilyHTML).join('')}</div>
+
+  <h3 class="kpc-tell-title-space">Combos de tells à surveiller</h3>
+  <p class="muted small">Ces combos servent à construire une hypothèse. Ils ne disent pas automatiquement “force” ou “bluff”.</p>
+  <div class="kpc-tell-combos">${kpcTellCombos.map(kpcTellComboHTML).join('')}</div>
+
+  <div class="toolbox">
+    <b>🎯 Exercice KPC — 1 orbite</b>
+    <p>Choisis un seul joueur. Pendant une orbite, ne cherche pas à deviner ses cartes. Observe seulement sa routine : timing, posture, parole, respiration, manipulation des jetons. Note mentalement les ruptures. Au showdown, vérifie si une rupture se répète.</p>
+  </div>
+
+  <div class="note">
+    <b>À retenir</b>
+    <p>Le tell le plus fiable n’est pas “un geste universel”. C’est souvent <b>un comportement personnel qui se répète dans le même contexte</b>.</p>
+  </div>
+
+  <button class="primary full" onclick="closeModal()">Retour à l’application</button>`;
+  openModal(html);
+}
+window.openTellsModule=openTellsModule;
+
+
+// --- KPC v2.7 : scouting joueurs par club / pseudo ---
+const KPC_SCOUTING_V27 = true;
+const KPC_SCOUT_KEY='kpc_scout_profiles_v27';
+let kpcScoutProfiles=store.get(KPC_SCOUT_KEY,[]);
+let kpcScoutFilterClub='';
+let kpcScoutSearch='';
+let kpcScoutDraftPhoto=null;
+
+const kpcScoutTypes=[
+  'Inconnu','Nit','Tight passif','TAG','LAG','Loose passif',
+  'Calling station','Maniac','Reg solide','Récréatif','Tricky / créatif'
+];
+
+const kpcScoutTags=[
+  'Open tight','Open large','3-bet fréquent','3-bet polarisé','Limp fréquent',
+  'Défend beaucoup BB','Overfold BB','Shove large','Push/fold solide',
+  'C-bet fréquent','2-barrel fréquent','Check-raise','Donk bet',
+  'Hero call','Overfold postflop','Trap / slowplay','Bluff fréquent',
+  'Value thin','Sizing tell','ICM prudent','ICM agressif',
+  'Tilt visible','Très patient','Imprévisible'
+];
+
+const kpcTellCats=['Timing','Posture','Jetons','Respiration / voix','Regard','Parole','Sizing + comportement','Autre'];
+
+function kpcScoutSaveAll(){ store.set(KPC_SCOUT_KEY,kpcScoutProfiles); }
+function kpcScoutUid(){
+  const c=window.crypto||window.msCrypto;
+  if(c&&typeof c.randomUUID==='function') return c.randomUUID();
+  const b=new Uint8Array(16);
+  if(c&&typeof c.getRandomValues==='function') c.getRandomValues(b);
+  else for(let i=0;i<16;i++) b[i]=Math.floor(Math.random()*256);
+  b[6]=(b[6]&15)|64; b[8]=(b[8]&63)|128;
+  const h=[...b].map(x=>x.toString(16).padStart(2,'0')).join('');
+  return h.slice(0,8)+'-'+h.slice(8,12)+'-'+h.slice(12,16)+'-'+h.slice(16,20)+'-'+h.slice(20);
+}
+function kpcScoutStars(v){ v=Math.max(0,Math.min(5,+v||0)); return '●'.repeat(v)+'○'.repeat(5-v); }
+function kpcScoutDate(v){
+  if(!v) return '—';
+  try{return new Date(v).toLocaleDateString('fr-FR')}catch(e){return v}
+}
+function kpcScoutFind(id){ return kpcScoutProfiles.find(x=>x.id===id); }
+
+function kpcScoutPhotoDB(){
+  return new Promise((resolve,reject)=>{
+    const q=indexedDB.open('kpc_scout_media',1);
+    q.onupgradeneeded=()=>{ const db=q.result; if(!db.objectStoreNames.contains('photos')) db.createObjectStore('photos',{keyPath:'id'}); };
+    q.onsuccess=()=>resolve(q.result); q.onerror=()=>reject(q.error);
+  });
+}
+async function kpcScoutSetPhoto(id,dataUrl){
+  if(!dataUrl) return;
+  const db=await kpcScoutPhotoDB();
+  await new Promise((resolve,reject)=>{
+    const tx=db.transaction('photos','readwrite');
+    tx.objectStore('photos').put({id,dataUrl});
+    tx.oncomplete=resolve; tx.onerror=()=>reject(tx.error);
+  });
+  db.close();
+}
+async function kpcScoutGetPhoto(id){
+  try{
+    const db=await kpcScoutPhotoDB();
+    const row=await new Promise((resolve,reject)=>{
+      const tx=db.transaction('photos','readonly');
+      const r=tx.objectStore('photos').get(id);
+      r.onsuccess=()=>resolve(r.result); r.onerror=()=>reject(r.error);
+    });
+    db.close(); return row?.dataUrl||'';
+  }catch(e){ return ''; }
+}
+async function kpcScoutDeletePhoto(id){
+  try{
+    const db=await kpcScoutPhotoDB();
+    await new Promise((resolve,reject)=>{
+      const tx=db.transaction('photos','readwrite');
+      tx.objectStore('photos').delete(id);
+      tx.oncomplete=resolve; tx.onerror=()=>reject(tx.error);
+    });
+    db.close();
+  }catch(e){}
+}
+function kpcScoutResizePhoto(file){
+  return new Promise((resolve,reject)=>{
+    const rd=new FileReader();
+    rd.onload=()=>{
+      const im=new Image();
+      im.onload=()=>{
+        const max=420, scale=Math.min(1,max/Math.max(im.width,im.height));
+        const w=Math.max(1,Math.round(im.width*scale)), h=Math.max(1,Math.round(im.height*scale));
+        const cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+        cv.getContext('2d').drawImage(im,0,0,w,h);
+        resolve(cv.toDataURL('image/jpeg',0.76));
+      };
+      im.onerror=reject; im.src=rd.result;
+    };
+    rd.onerror=reject; rd.readAsDataURL(file);
+  });
+}
+async function kpcScoutPhotoChanged(ev){
+  const f=ev.target.files?.[0]; if(!f) return;
+  try{
+    kpcScoutDraftPhoto=await kpcScoutResizePhoto(f);
+    const p=$('#sc_photo_preview'); if(p) p.src=kpcScoutDraftPhoto;
+  }catch(e){ alert('Impossible de lire cette photo.'); }
+}
+window.kpcScoutPhotoChanged=kpcScoutPhotoChanged;
+
+function kpcScoutProfileSummary(p){
+  const bits=[];
+  if(p.type&&p.type!=='Inconnu') bits.push(p.type);
+  if(p.tags?.length) bits.push(...p.tags.slice(0,2));
+  return bits.join(' • ')||'Profil à compléter';
+}
+function kpcScoutAvatarHTML(photo,p,size='normal'){
+  const cls='kpc-scout-avatar '+(size==='large'?'large':'');
+  if(photo) return '<img class="'+cls+'" src="'+photo+'" alt="">';
+  const ch=(p?.pseudo||'?').trim().charAt(0).toUpperCase()||'?';
+  return '<div class="'+cls+' fallback">'+esc(ch)+'</div>';
+}
+
+async function openScouting(){
+  const clubs=[...new Set(kpcScoutProfiles.map(p=>(p.club||'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'));
+  const filtered=kpcScoutProfiles
+    .filter(p=>!kpcScoutFilterClub||p.club===kpcScoutFilterClub)
+    .filter(p=>{
+      const q=kpcScoutSearch.trim().toLowerCase();
+      return !q||[p.pseudo,p.club,p.name,p.type,(p.tags||[]).join(' ')].join(' ').toLowerCase().includes(q);
+    })
+    .sort((a,b)=>(a.club||'').localeCompare(b.club||'','fr')||(a.pseudo||'').localeCompare(b.pseudo||'','fr'));
+
+  const photoPairs=await Promise.all(filtered.map(async p=>[p.id,await kpcScoutGetPhoto(p.id)]));
+  const photos=Object.fromEntries(photoPairs);
+
+  const chips=['<button class="chip '+(!kpcScoutFilterClub?'selected':'')+'" onclick="kpcScoutSetClub(\'\')">Tous</button>']
+    .concat(clubs.map(c=>'<button class="chip '+(kpcScoutFilterClub===c?'selected':'')+'" onclick="kpcScoutSetClub('+JSON.stringify(c).replace(/"/g,'&quot;')+')">'+esc(c)+'</button>')).join('');
+
+  const cards=filtered.length?filtered.map(p=>`
+    <article class="kpc-scout-card" onclick="openScoutProfile('${p.id}')">
+      ${kpcScoutAvatarHTML(photos[p.id],p)}
+      <div class="kpc-scout-card-main">
+        <div class="kpc-scout-club">${esc(p.club||'Sans club')}</div>
+        <b>${esc(p.pseudo||'Sans pseudo')}</b>
+        <small>${esc(kpcScoutProfileSummary(p))}</small>
+        <div class="kpc-scout-mini">
+          <span>AGR ${+p.aggression||3}/5</span><span>LOOSE ${+p.looseness||3}/5</span><span>ICM ${+p.icm||3}/5</span>
+        </div>
+      </div>
+      <span class="kpc-scout-arrow">›</span>
+    </article>`).join(''):'<div class="empty">Aucun profil pour ce filtre.</div>';
+
+  openModal(`<div class="modal-head"><div><span class="eyebrow">Compétitions par équipes</span><h2>🎯 Scouting joueurs</h2></div><button class="icon-btn" onclick="closeModal()">✕</button></div>
+    <p class="muted">Retrouve les adversaires par club et pseudo avant vos Sit & Go.</p>
+    <div class="kpc-scout-top">
+      <input id="kpcScoutSearch" placeholder="Rechercher un pseudo, club, profil..." value="${esc(kpcScoutSearch)}" oninput="kpcScoutSearch=this.value;openScouting()">
+      <button class="primary" onclick="openScoutEdit()">+ Joueur</button>
+    </div>
+    <div class="chips kpc-scout-clubchips">${chips}</div>
+    <div class="kpc-scout-list">${cards}</div>`);
+}
+window.openScouting=openScouting;
+function kpcScoutSetClub(c){ kpcScoutFilterClub=c; openScouting(); }
+window.kpcScoutSetClub=kpcScoutSetClub;
+
+async function openScoutEdit(id=''){
+  const old=id?kpcScoutFind(id):null;
+  const p=old?JSON.parse(JSON.stringify(old)):{
+    id:kpcScoutUid(),club:'',pseudo:'',name:'',type:'Inconnu',
+    aggression:3,looseness:3,threebet:3,blindDefense:3,icm:3,pressure:3,
+    tags:[],preflop:'',postflop:'',pushfold:'',sizings:'',exploit:'',notes:'',
+    encounters:0,lastSeen:'',tells:[],createdAt:new Date().toISOString()
+  };
+  kpcScoutDraftPhoto=await kpcScoutGetPhoto(p.id);
+  const typeOpts=kpcScoutTypes.map(x=>'<option '+(p.type===x?'selected':'')+'>'+esc(x)+'</option>').join('');
+  const tags=kpcScoutTags.map(t=>'<button type="button" class="chip '+(p.tags?.includes(t)?'selected':'')+'" data-scout-tag="'+esc(t)+'" onclick="this.classList.toggle(\'selected\')">'+esc(t)+'</button>').join('');
+  const initial=(p.pseudo||'?').trim().charAt(0).toUpperCase()||'?';
+  const ph='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><rect width="100%" height="100%" fill="#0d2b49"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-size="92" font-family="Arial" fill="#e5b84d">'+initial+'</text></svg>');
+  const preview=kpcScoutDraftPhoto||ph;
+
+  openModal(`<div class="modal-head"><div><span class="eyebrow">${old?'Modifier le profil':'Nouveau profil'}</span><h2>🎯 ${esc(p.pseudo||'Joueur')}</h2></div><button class="icon-btn" onclick="openScouting()">✕</button></div>
+    <div class="kpc-scout-edit-head">
+      <div class="kpc-scout-photo-pick"><img id="sc_photo_preview" class="kpc-scout-avatar large" src="${preview}" alt="Photo du joueur"><input id="sc_photo" type="file" accept="image/*" onchange="kpcScoutPhotoChanged(event)"><button type="button" class="secondary tiny" onclick="document.getElementById('sc_photo').click()">📷 Choisir / changer</button></div>
+      <div class="kpc-scout-idfields">
+        <label>Club / équipe<input id="sc_club" value="${esc(p.club)}" placeholder="Ex. CAC Poker"></label>
+        <label>Pseudo<input id="sc_pseudo" value="${esc(p.pseudo)}" placeholder="Pseudo du joueur"></label>
+        <label>Nom / prénom <span class="muted small">(facultatif)</span><input id="sc_name" value="${esc(p.name||'')}"></label>
+      </div>
+    </div>
+
+    <label>Profil principal<select id="sc_type">${typeOpts}</select></label>
+
+    <h3>Tendances générales</h3>
+    <div class="kpc-scout-sliders">
+      ${kpcScoutSlider('aggression','Agressivité',p.aggression,'passif','agressif')}
+      ${kpcScoutSlider('looseness','Largeur de range',p.looseness,'tight','loose')}
+      ${kpcScoutSlider('threebet','Fréquence 3-bet',p.threebet,'rare','fréquente')}
+      ${kpcScoutSlider('blindDefense','Défense de blindes',p.blindDefense,'fold beaucoup','défend beaucoup')}
+      ${kpcScoutSlider('icm','Discipline ICM',p.icm,'faible','forte')}
+      ${kpcScoutSlider('pressure','Réaction à la pression',p.pressure,'résiste','se dérègle')}
+    </div>
+
+    <h3>Étiquettes rapides</h3><div class="chips" id="sc_tags">${tags}</div>
+
+    <h3>Notes techniques</h3>
+    <label>Préflop<textarea id="sc_preflop" placeholder="Open, limp, 3-bet, défense BB...">${esc(p.preflop||'')}</textarea></label>
+    <label>Postflop<textarea id="sc_postflop" placeholder="C-bet, barrel, check-raise, hero call...">${esc(p.postflop||'')}</textarea></label>
+    <label>Push / Fold & ICM<textarea id="sc_pushfold" placeholder="Short stack, bulle, pression ICM...">${esc(p.pushfold||'')}</textarea></label>
+    <label>Sizings remarquables<textarea id="sc_sizings" placeholder="Tailles récurrentes, sizing tells...">${esc(p.sizings||'')}</textarea></label>
+    <label>Plan d'exploitation<textarea id="sc_exploit" placeholder="Comment adapter notre jeu contre lui ?">${esc(p.exploit||'')}</textarea></label>
+    <label>Notes libres<textarea id="sc_notes">${esc(p.notes||'')}</textarea></label>
+
+    <div class="grid2">
+      <label>Nombre de rencontres<input id="sc_encounters" inputmode="numeric" value="${esc(p.encounters||0)}"></label>
+      <label>Dernière rencontre<input id="sc_lastseen" type="date" value="${esc(p.lastSeen||'')}"></label>
+    </div>
+
+    <div class="row">
+      <button class="secondary" onclick="openScouting()">Annuler</button>
+      <button id="sc_save_btn" class="primary grow" onclick="kpcScoutSaveProfile('${p.id}')">💾 Enregistrer le profil</button>
+    </div>`);
+}
+window.openScoutEdit=openScoutEdit;
+
+function kpcScoutSlider(id,label,value,left,right){
+  return `<label class="kpc-scout-slider"><div><b>${esc(label)}</b><span id="sc_${id}_v">${value||3}/5</span></div>
+    <input type="range" id="sc_${id}" min="1" max="5" value="${value||3}" oninput="$('#sc_${id}_v').textContent=this.value+'/5'">
+    <small><span>${esc(left)}</span><span>${esc(right)}</span></small></label>`;
+}
+
+async function kpcScoutSaveProfile(id){
+  const club=$('#sc_club')?.value.trim(), pseudo=$('#sc_pseudo')?.value.trim();
+  if(!club||!pseudo){ alert('Le club et le pseudo sont nécessaires.'); return; }
+  const old=kpcScoutFind(id);
+  const p=old?JSON.parse(JSON.stringify(old)):{id,createdAt:new Date().toISOString(),tells:[]};
+  Object.assign(p,{
+    club,pseudo,name:$('#sc_name')?.value.trim()||'',type:$('#sc_type')?.value||'Inconnu',
+    aggression:+$('#sc_aggression')?.value||3,looseness:+$('#sc_looseness')?.value||3,
+    threebet:+$('#sc_threebet')?.value||3,blindDefense:+$('#sc_blindDefense')?.value||3,
+    icm:+$('#sc_icm')?.value||3,pressure:+$('#sc_pressure')?.value||3,
+    tags:$$('[data-scout-tag].selected').map(x=>x.dataset.scoutTag),
+    preflop:$('#sc_preflop')?.value||'',postflop:$('#sc_postflop')?.value||'',
+    pushfold:$('#sc_pushfold')?.value||'',sizings:$('#sc_sizings')?.value||'',
+    exploit:$('#sc_exploit')?.value||'',notes:$('#sc_notes')?.value||'',
+    encounters:+$('#sc_encounters')?.value||0,lastSeen:$('#sc_lastseen')?.value||'',
+    updatedAt:new Date().toISOString()
+  });
+  if(old) kpcScoutProfiles[kpcScoutProfiles.findIndex(x=>x.id===id)]=p;
+  else kpcScoutProfiles.push(p);
+  kpcScoutSaveAll();
+  if(kpcScoutDraftPhoto) await kpcScoutSetPhoto(id,kpcScoutDraftPhoto);
+  kpcScoutDraftPhoto=null;
+  toast('Profil joueur enregistré ✓');
+  openScoutProfile(id);
+}
+window.kpcScoutSaveProfile=kpcScoutSaveProfile;
+
+async function openScoutProfile(id){
+  const p=kpcScoutFind(id); if(!p){ openScouting(); return; }
+  const photo=await kpcScoutGetPhoto(id);
+  const tags=(p.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('');
+  const tells=(p.tells||[]).length?(p.tells||[]).slice().reverse().map(t=>`
+    <article class="kpc-scout-tell">
+      <div class="kpc-scout-tell-head"><b>${esc(t.category||'Tell')}</b><span>Confiance ${+t.confidence||1}/5</span></div>
+      <p><strong>Observation :</strong> ${esc(t.observation||'')}</p>
+      ${t.context?'<p><strong>Contexte :</strong> '+esc(t.context)+'</p>':''}
+      ${t.hypothesis?'<p><strong>Hypothèse :</strong> '+esc(t.hypothesis)+'</p>':''}
+      <small>${t.confirmed?'✓ Validé / revu au showdown':'À confirmer'} • ${kpcScoutDate(t.at)}${t.createdByName?' • ajouté par '+esc(t.createdByName):''}</small>
+    </article>`).join(''):'<div class="empty small">Aucun tell enregistré pour ce joueur.</div>';
+
+  openModal(`<div class="modal-head"><div><span class="eyebrow">${esc(p.club||'Club')}</span><h2>${esc(p.pseudo||'Joueur')}</h2></div><button class="icon-btn" onclick="openScouting()">✕</button></div>
+    <div class="kpc-scout-profile-head">
+      ${kpcScoutAvatarHTML(photo,p,'large')}
+      <div><b class="kpc-scout-type">${esc(p.type||'Inconnu')}</b>${p.name?'<p>'+esc(p.name)+'</p>':''}
+      <small>${+p.encounters||0} rencontre(s) • dernière : ${kpcScoutDate(p.lastSeen)}</small>${p.updatedByName?'<small>Dernière mise à jour : '+esc(p.updatedByName)+'</small>':''}</div>
+    </div>
+
+    <div class="kpc-scout-gauges">
+      ${kpcScoutGauge('Agressivité',p.aggression)}
+      ${kpcScoutGauge('Ranges',p.looseness)}
+      ${kpcScoutGauge('3-bet',p.threebet)}
+      ${kpcScoutGauge('Défense BB',p.blindDefense)}
+      ${kpcScoutGauge('ICM',p.icm)}
+      ${kpcScoutGauge('Pression',p.pressure)}
+    </div>
+    ${tags?'<div class="tags kpc-scout-tags">'+tags+'</div>':''}
+
+    ${kpcScoutTextBlock('Préflop',p.preflop)}
+    ${kpcScoutTextBlock('Postflop',p.postflop)}
+    ${kpcScoutTextBlock('Push / Fold & ICM',p.pushfold)}
+    ${kpcScoutTextBlock('Sizings remarquables',p.sizings)}
+    ${kpcScoutTextBlock('Plan d’exploitation',p.exploit)}
+    ${kpcScoutTextBlock('Notes libres',p.notes)}
+
+    <div class="section-head"><h3>👁 Tells observés</h3><button class="tiny" onclick="openScoutTellEdit('${id}')">+ Tell</button></div>
+    <div>${tells}</div>
+
+    <div class="row kpc-scout-actions">
+      <button class="secondary" onclick="openScoutEdit('${id}')">✎ Modifier</button>
+      <button class="secondary" onclick="kpcScoutMarkSeen('${id}')">✓ Rencontré aujourd’hui</button>
+      <button class="danger" onclick="kpcScoutDelete('${id}')">Supprimer</button>
+    </div>`);
+}
+window.openScoutProfile=openScoutProfile;
+
+function kpcScoutGauge(label,v){
+  const n=Math.max(1,Math.min(5,+v||3));
+  return '<div><span>'+esc(label)+'</span><b>'+kpcScoutStars(n)+'</b></div>';
+}
+function kpcScoutTextBlock(title,text){
+  return text?'<div class="toolbox kpc-scout-block"><b>'+esc(title)+'</b><p>'+esc(text).replace(/\n/g,'<br>')+'</p></div>':'';
+}
+
+function openScoutTellEdit(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  const opts=kpcTellCats.map(x=>'<option>'+esc(x)+'</option>').join('');
+  openModal(`<div class="modal-head"><div><span class="eyebrow">${esc(p.club)}</span><h2>👁 Nouveau tell • ${esc(p.pseudo)}</h2></div><button class="icon-btn" onclick="openScoutProfile('${id}')">✕</button></div>
+    <label>Catégorie<select id="st_cat">${opts}</select></label>
+    <label>Ce que j’ai observé<textarea id="st_obs" placeholder="Décris uniquement le comportement observé..."></textarea></label>
+    <label>Contexte<textarea id="st_ctx" placeholder="Ex. river, pot important, après un check-raise..."></textarea></label>
+    <label>Hypothèse<textarea id="st_hyp" placeholder="Ex. semble associé à une grosse décision ; à confirmer..."></textarea></label>
+    <label>Niveau de confiance <input type="range" id="st_conf" min="1" max="5" value="2" oninput="this.nextElementSibling.textContent=this.value+'/5'"><span class="range-val">2/5</span></label>
+    <label class="kpc-check"><input type="checkbox" id="st_confirmed"> Observation validée / revue au showdown</label>
+    <div class="note"><b>Rappel</b><p>Un tell isolé n’est pas une preuve. Note le fait observé séparément de ton interprétation.</p></div>
+    <div class="row"><button class="secondary" onclick="openScoutProfile('${id}')">Annuler</button><button class="primary grow" onclick="kpcScoutSaveTell('${id}')">Enregistrer le tell</button></div>`);
+}
+window.openScoutTellEdit=openScoutTellEdit;
+
+function kpcScoutSaveTell(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  const obs=$('#st_obs')?.value.trim();
+  if(!obs){ alert('Décris le tell observé.'); return; }
+  p.tells=p.tells||[];
+  p.tells.push({
+    id:kpcScoutUid(),category:$('#st_cat')?.value||'Autre',observation:obs,
+    context:$('#st_ctx')?.value||'',hypothesis:$('#st_hyp')?.value||'',
+    confidence:+$('#st_conf')?.value||1,confirmed:!!$('#st_confirmed')?.checked,
+    at:new Date().toISOString()
+  });
+  p.updatedAt=new Date().toISOString(); kpcScoutSaveAll(); toast('Tell ajouté ✓'); openScoutProfile(id);
+}
+window.kpcScoutSaveTell=kpcScoutSaveTell;
+
+function kpcScoutMarkSeen(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  p.encounters=(+p.encounters||0)+1;
+  p.lastSeen=new Date().toISOString().slice(0,10);
+  p.updatedAt=new Date().toISOString();
+  kpcScoutSaveAll(); toast('Rencontre mise à jour ✓'); openScoutProfile(id);
+}
+window.kpcScoutMarkSeen=kpcScoutMarkSeen;
+
+async function kpcScoutDelete(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  if(!confirm('Supprimer définitivement le profil de '+(p.pseudo||'ce joueur')+' ?')) return;
+  kpcScoutProfiles=kpcScoutProfiles.filter(x=>x.id!==id); kpcScoutSaveAll(); await kpcScoutDeletePhoto(id);
+  toast('Profil supprimé'); openScouting();
+}
+window.kpcScoutDelete=kpcScoutDelete;
+
+
+// --- KPC v2.8 : scouting collaboratif Supabase + Realtime ---
+const KPC_SCOUT_CLOUD_V28 = true;
+const KPC_V28_URL='https://xfutvyvvhlhpeowtgfbq.supabase.co';
+const KPC_V28_KEY='sb_publishable__6uNHhAsZQ-RF21RTLE31g_A2CukL8j';
+const KPC_V28_SESSION='kpc_v22_session';
+const KPC_V28_MIGRATED='kpc_scout_cloud_migrated_v28';
+function kpcV28UuidOk(v){ return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(v||'')); }
+
+let kpcV28Me=null;
+let kpcV28LastSync=0;
+let kpcV28SyncPromise=null;
+let kpcV28Socket=null;
+let kpcV28Heartbeat=null;
+let kpcV28RetryTimer=null;
+let kpcV28DebounceTimer=null;
+let kpcV28CurrentView={type:null,id:null};
+let kpcV28RealtimeState='offline';
+let kpcV28Ref=1;
+
+function kpcV28Session(){
+  try{return JSON.parse(localStorage.getItem(KPC_V28_SESSION)||'null')}catch(e){return null}
+}
+function kpcV28StoreSession(x){
+  localStorage.setItem(KPC_V28_SESSION,JSON.stringify(x));
+  return x;
+}
+async function kpcV28RefreshSession(){
+  const s=kpcV28Session();
+  if(!s?.refresh_token) throw Error('Session expirée. Reconnecte-toi.');
+  const r=await fetch(KPC_V28_URL+'/auth/v1/token?grant_type=refresh_token',{
+    method:'POST',
+    headers:{'apikey':KPC_V28_KEY,'Content-Type':'application/json'},
+    body:JSON.stringify({refresh_token:s.refresh_token})
+  });
+  const d=await r.json().catch(()=>null);
+  if(!r.ok) throw Error(d?.msg||d?.message||d?.error_description||'Session expirée.');
+  return kpcV28StoreSession(d);
+}
+async function kpcV28Api(path,o={},retry=true){
+  let s=kpcV28Session();
+  if(!s?.access_token) throw Error('Connecte-toi à ton compte KPC.');
+  const h={'apikey':KPC_V28_KEY,'Content-Type':'application/json',...(o.headers||{}),Authorization:'Bearer '+s.access_token};
+  let r=await fetch(KPC_V28_URL+path,{...o,headers:h});
+  if(r.status===401 && retry){
+    await kpcV28RefreshSession();
+    return kpcV28Api(path,o,false);
+  }
+  let d=null;
+  const txt=await r.text();
+  if(txt){ try{d=JSON.parse(txt)}catch(e){d=txt} }
+  if(!r.ok) throw Error(d?.message||d?.msg||d?.error_description||d?.hint||('Erreur '+r.status));
+  return d;
+}
+async function kpcV28GetMe(force=false){
+  if(kpcV28Me&&!force) return kpcV28Me;
+  const s=kpcV28Session();
+  if(!s?.user?.id) throw Error('Connecte-toi à ton compte KPC.');
+  const a=await kpcV28Api('/rest/v1/profiles?select=id,display_name,approved,role&id=eq.'+encodeURIComponent(s.user.id));
+  const p=a?.[0];
+  if(!p) throw Error('Profil KPC introuvable.');
+  if(!p.approved) throw Error('Ton compte KPC doit être validé pour accéder au scouting partagé.');
+  kpcV28Me=p;
+  return p;
+}
+
+function kpcV28ProfileData(p){
+  return {
+    type:p.type||'Inconnu',
+    aggression:+p.aggression||3,
+    looseness:+p.looseness||3,
+    threebet:+p.threebet||3,
+    blindDefense:+p.blindDefense||3,
+    icm:+p.icm||3,
+    pressure:+p.pressure||3,
+    tags:Array.isArray(p.tags)?p.tags:[],
+    preflop:p.preflop||'',
+    postflop:p.postflop||'',
+    pushfold:p.pushfold||'',
+    sizings:p.sizings||'',
+    exploit:p.exploit||'',
+    notes:p.notes||''
+  };
+}
+function kpcV28TellFromRow(t){
+  return {
+    id:t.id,
+    category:t.category||'Autre',
+    observation:t.observation||'',
+    context:t.context||'',
+    hypothesis:t.hypothesis||'',
+    confidence:+t.confidence||1,
+    confirmed:!!t.confirmed,
+    at:t.created_at,
+    createdByName:t.created_by_name||'',
+    updatedByName:t.updated_by_name||''
+  };
+}
+function kpcV28PlayerFromRow(r,tells){
+  return {
+    id:r.id,club:r.club||'',pseudo:r.pseudo||'',name:r.name||'',
+    ...(r.profile_data||{}),
+    encounters:+r.encounters||0,
+    lastSeen:r.last_seen||'',
+    createdAt:r.created_at,
+    updatedAt:r.updated_at,
+    createdByName:r.created_by_name||'',
+    updatedByName:r.updated_by_name||'',
+    tells:(tells||[]).filter(t=>t.player_id===r.id).map(kpcV28TellFromRow)
+  };
+}
+async function kpcV28MigrateLocal(localBefore,remotePlayers,me){
+  if(localStorage.getItem(KPC_V28_MIGRATED)==='1') return false;
+  if(!Array.isArray(localBefore)||!localBefore.length){
+    localStorage.setItem(KPC_V28_MIGRATED,'1'); return false;
+  }
+  let wrote=false;
+  for(const p of localBefore){
+    const same=remotePlayers.find(r=>r.id===p.id ||
+      ((r.club||'').trim().toLowerCase()===(p.club||'').trim().toLowerCase() &&
+       (r.pseudo||'').trim().toLowerCase()===(p.pseudo||'').trim().toLowerCase()));
+    if(same) continue;
+    try{
+      const photo=await kpcScoutGetPhoto(p.id);
+      const body={
+        id:p.id,club:p.club||'Sans club',pseudo:p.pseudo||'Sans pseudo',name:p.name||null,
+        profile_data:kpcV28ProfileData(p),photo_data:photo||null,
+        encounters:+p.encounters||0,last_seen:p.lastSeen||null,
+        created_by:me.id,created_by_name:me.display_name||'Membre KPC',
+        updated_by:me.id,updated_by_name:me.display_name||'Membre KPC',
+        created_at:p.createdAt||new Date().toISOString(),updated_at:new Date().toISOString()
+      };
+      await kpcV28Api('/rest/v1/scouting_players',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify(body)});
+      for(const t of (p.tells||[])){
+        await kpcV28Api('/rest/v1/scouting_tells',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({
+          id:t.id||kpcScoutUid(),player_id:p.id,category:t.category||'Autre',
+          observation:t.observation||'Observation importée',context:t.context||'',hypothesis:t.hypothesis||'',
+          confidence:+t.confidence||2,confirmed:!!t.confirmed,
+          created_by:me.id,created_by_name:t.createdByName||me.display_name||'Membre KPC',
+          updated_by:me.id,updated_by_name:me.display_name||'Membre KPC',
+          created_at:t.at||new Date().toISOString(),updated_at:new Date().toISOString()
+        })});
+      }
+      wrote=true;
+    }catch(e){ console.warn('Migration scouting local:',e.message); }
+  }
+  localStorage.setItem(KPC_V28_MIGRATED,'1');
+  return wrote;
+}
+
+async function kpcV28LoadAll({migrate=true,render=false,silent=false}={}){
+  if(kpcV28SyncPromise) return kpcV28SyncPromise;
+  kpcV28SyncPromise=(async()=>{
+    try{
+      kpcV28SetState('syncing');
+      const me=await kpcV28GetMe();
+      const localBefore=Array.isArray(kpcScoutProfiles)?JSON.parse(JSON.stringify(kpcScoutProfiles)):[];
+      let players=await kpcV28Api('/rest/v1/scouting_players?select=*&order=club.asc,pseudo.asc');
+      if(migrate && await kpcV28MigrateLocal(localBefore,players,me)){
+        players=await kpcV28Api('/rest/v1/scouting_players?select=*&order=club.asc,pseudo.asc');
+      }
+      const tells=await kpcV28Api('/rest/v1/scouting_tells?select=*&order=created_at.asc');
+      const mapped=players.map(r=>kpcV28PlayerFromRow(r,tells||[]));
+      for(const r of players){
+        if(r.photo_data){
+          try{ await kpcScoutSetPhoto(r.id,r.photo_data); }catch(e){}
+        }
+      }
+      kpcScoutProfiles=mapped;
+      kpcScoutSaveAll();
+      kpcV28LastSync=Date.now();
+      kpcV28SetState('online');
+      if(render) kpcV28RenderCurrent();
+      return mapped;
+    }catch(e){
+      kpcV28SetState('offline',e.message);
+      if(!silent) console.warn('Scouting cloud:',e.message);
+      throw e;
+    }finally{kpcV28SyncPromise=null}
+  })();
+  return kpcV28SyncPromise;
+}
+
+function kpcV28SetState(state,msg=''){
+  kpcV28RealtimeState=state;
+  const el=$('#kpc-v28-sync');
+  if(!el) return;
+  el.className='kpc-v28-sync '+state;
+  el.textContent=state==='online'?'☁️ KPC partagé • synchronisé':state==='syncing'?'↻ Synchronisation…':'⚠ Hors ligne • cache local';
+  if(msg) el.title=msg;
+}
+function kpcV28InjectStatus(){
+  const host=$('#modal-content'); if(!host) return;
+  let el=$('#kpc-v28-sync');
+  if(!el){
+    el=document.createElement('div');
+    el.id='kpc-v28-sync';
+    const head=host.querySelector('.modal-head');
+    if(head) head.insertAdjacentElement('afterend',el); else host.prepend(el);
+  }
+  kpcV28SetState(kpcV28RealtimeState);
+}
+function kpcV28Editing(){ return !!($('#sc_club')||$('#st_obs')); }
+
+const kpcV28BaseOpenScouting=window.openScouting;
+const kpcV28BaseOpenProfile=window.openScoutProfile;
+const kpcV28BaseOpenEdit=window.openScoutEdit;
+
+window.openScouting=async function(){
+  kpcV28CurrentView={type:'list',id:null};
+  try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
+  const r=await kpcV28BaseOpenScouting();
+  setTimeout(kpcV28InjectStatus,0);
+  kpcV28ConnectRealtime();
+  return r;
+};
+openScouting=window.openScouting;
+
+window.openScoutProfile=async function(id){
+  kpcV28CurrentView={type:'profile',id};
+  if(Date.now()-kpcV28LastSync>5000){
+    try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
+  }
+  const r=await kpcV28BaseOpenProfile(id);
+  setTimeout(kpcV28InjectStatus,0);
+  kpcV28ConnectRealtime();
+  return r;
+};
+openScoutProfile=window.openScoutProfile;
+
+window.openScoutEdit=async function(id=''){
+  if(Date.now()-kpcV28LastSync>5000){
+    try{ await kpcV28LoadAll({migrate:true,silent:true}); }catch(e){}
+  }
+  kpcV28CurrentView={type:'edit',id:id||null};
+  return kpcV28BaseOpenEdit(id);
+};
+openScoutEdit=window.openScoutEdit;
+
+function kpcV28RenderCurrent(){
+  if(kpcV28Editing()) return;
+  if(kpcV28CurrentView.type==='profile' && kpcV28CurrentView.id){
+    kpcV28BaseOpenProfile(kpcV28CurrentView.id).then(()=>setTimeout(kpcV28InjectStatus,0));
+  }else if(kpcV28CurrentView.type==='list'){
+    kpcV28BaseOpenScouting().then(()=>setTimeout(kpcV28InjectStatus,0));
+  }
+}
+
+window.kpcScoutSaveProfile=async function(id){
+  const club=$('#sc_club')?.value.trim(), pseudo=$('#sc_pseudo')?.value.trim();
+  if(!club||!pseudo){ alert('Le club et le pseudo sont nécessaires.'); return; }
+  const btn=$('#sc_save_btn');
+  const originalLabel=btn?.innerHTML||'💾 Enregistrer le profil';
+  if(btn){btn.disabled=true;btn.innerHTML='↻ Enregistrement…';}
+  const sourceId=id;
+  if(!kpcV28UuidOk(id)) id=kpcScoutUid();
+  try{
+    kpcV28SetState('syncing');
+    const me=await kpcV28GetMe();
+    const sess=kpcV28Session();
+    const old=kpcScoutFind(sourceId)||kpcScoutFind(id);
+    const p=old?JSON.parse(JSON.stringify(old)):{id,createdAt:new Date().toISOString(),tells:[]};
+    Object.assign(p,{
+      club,pseudo,name:$('#sc_name')?.value.trim()||'',type:$('#sc_type')?.value||'Inconnu',
+      aggression:+$('#sc_aggression')?.value||3,looseness:+$('#sc_looseness')?.value||3,
+      threebet:+$('#sc_threebet')?.value||3,blindDefense:+$('#sc_blindDefense')?.value||3,
+      icm:+$('#sc_icm')?.value||3,pressure:+$('#sc_pressure')?.value||3,
+      tags:$$('[data-scout-tag].selected').map(x=>x.dataset.scoutTag),
+      preflop:$('#sc_preflop')?.value||'',postflop:$('#sc_postflop')?.value||'',
+      pushfold:$('#sc_pushfold')?.value||'',sizings:$('#sc_sizings')?.value||'',
+      exploit:$('#sc_exploit')?.value||'',notes:$('#sc_notes')?.value||'',
+      encounters:+$('#sc_encounters')?.value||0,lastSeen:$('#sc_lastseen')?.value||''
+    });
+    const photo=kpcScoutDraftPhoto||await kpcScoutGetPhoto(sourceId)||await kpcScoutGetPhoto(id)||null;
+    const common={
+      club,pseudo,name:p.name||null,profile_data:kpcV28ProfileData(p),photo_data:photo,
+      encounters:p.encounters,last_seen:p.lastSeen||null,
+      updated_by:sess.user.id,updated_by_name:me.display_name||'Membre KPC',
+      updated_at:new Date().toISOString()
+    };
+    if(old && kpcV28UuidOk(sourceId)){
+      await kpcV28Api('/rest/v1/scouting_players?id=eq.'+encodeURIComponent(sourceId),{
+        method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify(common)
+      });
+    }else{
+      await kpcV28Api('/rest/v1/scouting_players',{
+        method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({
+          id,...common,created_by:sess.user.id,created_by_name:me.display_name||'Membre KPC',created_at:new Date().toISOString()
+        })
+      });
+    }
+    if(photo) await kpcScoutSetPhoto(id,photo);
+    if(sourceId!==id){ try{await kpcScoutDeletePhoto(sourceId)}catch(e){} }
+    kpcScoutDraftPhoto=null;
+    await kpcV28LoadAll({migrate:false,silent:true});
+    toast('Profil partagé avec l’équipe ✓');
+    await window.openScoutProfile(id);
+  }catch(e){
+    kpcV28SetState('offline',e.message);
+    alert(e.message.includes('duplicate')?'Ce pseudo existe déjà dans ce club.':('Synchronisation impossible : '+e.message));
+    if(btn){btn.disabled=false;btn.innerHTML=originalLabel;}
+  }
+};
+kpcScoutSaveProfile=window.kpcScoutSaveProfile;
+
+window.kpcScoutSaveTell=async function(id){
+  const obs=$('#st_obs')?.value.trim();
+  if(!obs){ alert('Décris le tell observé.'); return; }
+  try{
+    const me=await kpcV28GetMe(), sess=kpcV28Session();
+    await kpcV28Api('/rest/v1/scouting_tells',{
+      method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({
+        id:kpcScoutUid(),player_id:id,category:$('#st_cat')?.value||'Autre',observation:obs,
+        context:$('#st_ctx')?.value||'',hypothesis:$('#st_hyp')?.value||'',
+        confidence:+$('#st_conf')?.value||2,confirmed:!!$('#st_confirmed')?.checked,
+        created_by:sess.user.id,created_by_name:me.display_name||'Membre KPC',
+        updated_by:sess.user.id,updated_by_name:me.display_name||'Membre KPC',
+        created_at:new Date().toISOString(),updated_at:new Date().toISOString()
+      })
+    });
+    await kpcV28LoadAll({migrate:false,silent:true});
+    toast('Tell partagé avec l’équipe ✓');
+    await window.openScoutProfile(id);
+  }catch(e){ alert('Impossible d’ajouter le tell : '+e.message); }
+};
+kpcScoutSaveTell=window.kpcScoutSaveTell;
+
+window.kpcScoutMarkSeen=async function(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  try{
+    const me=await kpcV28GetMe(), sess=kpcV28Session();
+    await kpcV28Api('/rest/v1/scouting_players?id=eq.'+encodeURIComponent(id),{
+      method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({
+        encounters:(+p.encounters||0)+1,last_seen:new Date().toISOString().slice(0,10),
+        updated_by:sess.user.id,updated_by_name:me.display_name||'Membre KPC',updated_at:new Date().toISOString()
+      })
+    });
+    await kpcV28LoadAll({migrate:false,silent:true});
+    toast('Rencontre synchronisée ✓');
+    await window.openScoutProfile(id);
+  }catch(e){ alert('Mise à jour impossible : '+e.message); }
+};
+kpcScoutMarkSeen=window.kpcScoutMarkSeen;
+
+window.kpcScoutDelete=async function(id){
+  const p=kpcScoutFind(id); if(!p) return;
+  if(!confirm('Supprimer définitivement le profil partagé de '+(p.pseudo||'ce joueur')+' ?')) return;
+  try{
+    await kpcV28Api('/rest/v1/scouting_players?id=eq.'+encodeURIComponent(id),{method:'DELETE',headers:{Prefer:'return=minimal'}});
+    await kpcScoutDeletePhoto(id);
+    await kpcV28LoadAll({migrate:false,silent:true});
+    toast('Profil partagé supprimé');
+    await window.openScouting();
+  }catch(e){
+    alert('Suppression refusée. Seul le créateur du profil ou un administrateur peut le supprimer.');
+  }
+};
+kpcScoutDelete=window.kpcScoutDelete;
+
+function kpcV28DisconnectRealtime(){
+  if(kpcV28Heartbeat){clearInterval(kpcV28Heartbeat);kpcV28Heartbeat=null}
+  if(kpcV28RetryTimer){clearTimeout(kpcV28RetryTimer);kpcV28RetryTimer=null}
+  if(kpcV28Socket){try{kpcV28Socket.close()}catch(e){} kpcV28Socket=null}
+  kpcV28SetState('offline');
+}
+function kpcV28ScheduleRefresh(){
+  clearTimeout(kpcV28DebounceTimer);
+  kpcV28DebounceTimer=setTimeout(async()=>{
+    try{
+      await kpcV28LoadAll({migrate:false,silent:true});
+      if(!kpcV28Editing()){
+        kpcV28RenderCurrent();
+        if(kpcV28CurrentView.type==='list'||kpcV28CurrentView.type==='profile') toast('Scouting KPC mis à jour ✓');
+      }
+    }catch(e){}
+  },450);
+}
+function kpcV28Send(msg){
+  if(kpcV28Socket?.readyState===WebSocket.OPEN) kpcV28Socket.send(JSON.stringify(msg));
+}
+function kpcV28ConnectRealtime(){
+  const sess=kpcV28Session();
+  if(!sess?.access_token){ if(kpcV28Socket) kpcV28DisconnectRealtime(); return; }
+  if(kpcV28Socket && (kpcV28Socket.readyState===WebSocket.OPEN||kpcV28Socket.readyState===WebSocket.CONNECTING)) return;
+  try{
+    const url='wss://xfutvyvvhlhpeowtgfbq.supabase.co/realtime/v1/websocket?apikey='+encodeURIComponent(KPC_V28_KEY)+'&vsn=1.0.0';
+    const ws=new WebSocket(url); kpcV28Socket=ws;
+    ws.onopen=()=>{
+      kpcV28SetState('online');
+      const ref=String(kpcV28Ref++);
+      kpcV28Send({
+        topic:'realtime:kpc-scouting',event:'phx_join',ref,join_ref:ref,
+        payload:{config:{
+          broadcast:{self:false},presence:{key:''},
+          postgres_changes:[
+            {event:'*',schema:'public',table:'scouting_players'},
+            {event:'*',schema:'public',table:'scouting_tells'}
+          ],
+          private:false
+        },access_token:kpcV28Session()?.access_token||''}
+      });
+      if(kpcV28Heartbeat) clearInterval(kpcV28Heartbeat);
+      kpcV28Heartbeat=setInterval(()=>kpcV28Send({topic:'phoenix',event:'heartbeat',payload:{},ref:String(kpcV28Ref++)}),25000);
+    };
+    ws.onmessage=ev=>{
+      let m=null; try{m=JSON.parse(ev.data)}catch(e){return}
+      if(m?.event==='postgres_changes') kpcV28ScheduleRefresh();
+      if(m?.event==='phx_reply' && m?.payload?.status==='error') console.warn('KPC Realtime:',m.payload.response);
+    };
+    ws.onerror=()=>kpcV28SetState('offline');
+    ws.onclose=()=>{
+      if(kpcV28Socket===ws) kpcV28Socket=null;
+      if(kpcV28Heartbeat){clearInterval(kpcV28Heartbeat);kpcV28Heartbeat=null}
+      kpcV28SetState('offline');
+      if(kpcV28Session()?.access_token && !kpcV28RetryTimer){
+        kpcV28RetryTimer=setTimeout(()=>{kpcV28RetryTimer=null;kpcV28ConnectRealtime()},5000);
+      }
+    };
+  }catch(e){ kpcV28SetState('offline',e.message); }
+}
+window.kpcV28ForceSync=async function(){
+  try{await kpcV28LoadAll({migrate:true,render:true});toast('Scouting KPC synchronisé ✓')}catch(e){alert(e.message)}
+};
+
+setTimeout(()=>{ if(kpcV28Session()?.access_token) kpcV28ConnectRealtime(); },2500);
+setInterval(()=>{
+  if(kpcV28Session()?.access_token){
+    if(!kpcV28Socket || kpcV28Socket.readyState>1) kpcV28ConnectRealtime();
+  }else if(kpcV28Socket) kpcV28DisconnectRealtime();
+},20000);
+setInterval(()=>{
+  if(document.hidden || kpcV28Editing()) return;
+  if(!kpcV28Session()?.access_token) return;
+  if((kpcV28CurrentView.type==='list'||kpcV28CurrentView.type==='profile') && Date.now()-kpcV28LastSync>12000){
+    kpcV28LoadAll({migrate:false,render:true,silent:true}).catch(()=>{});
+  }
+},15000);
+window.addEventListener('online',()=>{kpcV28ConnectRealtime();kpcV28ScheduleRefresh()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&kpcV28Session()?.access_token){kpcV28ConnectRealtime(); if(Date.now()-kpcV28LastSync>30000)kpcV28ScheduleRefresh();}});
+
+</script><script id="kpc-pwa-runtime">
+(function(){
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){
+      navigator.serviceWorker.register("./sw.js").then(function(r){r.update().catch(function(){});}).catch(function(){});
+    });
+  }
+  function isiOS(){
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+  }
+  function standalone(){
+    return window.navigator.standalone===true ||
+      window.matchMedia("(display-mode: standalone)").matches;
+  }
+  function showInstallHelp(){
+    if(!isiOS() || standalone() || document.getElementById("kpcIosInstall")) return;
+    var el=document.createElement("div");
+    el.id="kpcIosInstall";
+    el.innerHTML="<b>📱 Installer KPC Mental Game sur iPhone</b><p>Dans Safari, touche <strong>Partager</strong> (carré avec la flèche), puis <strong>Ajouter à l’écran d’accueil</strong> et enfin <strong>Ajouter</strong>.</p><button type='button'>J’ai compris</button>";
+    el.querySelector("button").onclick=function(){el.remove();sessionStorage.setItem("kpc_ios_install_seen","1");};
+    document.body.appendChild(el);
+  }
+  window.addEventListener("load",function(){
+    if(sessionStorage.getItem("kpc_ios_install_seen")!=="1") setTimeout(showInstallHelp,700);
+  });
+})();
+</script></body></html>
