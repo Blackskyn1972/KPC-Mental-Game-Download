@@ -1,6 +1,6 @@
 {
-  "versionCode": 30,
-  "versionName": "2.10",
+  "versionCode": 31,
+  "versionName": "2.11",
   "downloadUrl": "https://blackskyn1972.github.io/KPC-Mental-Game-Download/KPC-Mental-Game.apk",
-  "notes": "KPC Mental Game V2.10 : scouting collaboratif, photos Android et correction du bouton + Joueur."
+  "notes": "V2.11 : le Scouting se synchronise en arrière-plan sans interrompre une review ou une autre vue."
 }
