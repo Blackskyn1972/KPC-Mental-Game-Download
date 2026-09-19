@@ -1,6 +1,6 @@
 {
-  "versionCode": 32,
-  "versionName": "2.12",
+  "versionCode": 33,
+  "versionName": "2.13",
   "downloadUrl": "https://raw.githubusercontent.com/Blackskyn1972/KPC-Mental-Game-Download/main/KPC-Mental-Game.apk",
-  "notes": "V2.12 : nouveau nom KPC Mental Game et Compétition, sans changement de compte ni de données."
+  "notes": "V2.13 : le numéro de version est désormais visible directement en haut de l'accueil."
 }
