@@ -1,4 +1,4 @@
-const C="kpc-mental-v210";
+const C="kpc-mental-v212";
 const CORE=["./","./index.html","./manifest.webmanifest","./logo.svg"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE)))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
