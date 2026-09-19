@@ -1,0 +1,39 @@
+name: Publish KPC Android V2.10
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-android-v210.yml"
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download signed KPC APK artifact
+        run: |
+          curl -L --fail --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-4e8c-81f4-ab0a-171c75bdb4b2/raw?se=2026-09-19T09%3A09%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=4218fa19-6ac2-54c4-b976-5a62f6a3abed&skoid=5bfb38a5-43fb-4c63-80a1-6ae1e97e2e16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T05%3A56%3A26Z&ske=2026-09-20T05%3A56%3A26Z&sks=b&skv=2026-02-06&sig=pKod%2B2mLR9QXFAEli0J7oJ4sSWQGn9CH9cZId2kjsBw%3D' -o /tmp/kpc-v210.zip
+          unzip -o /tmp/kpc-v210.zip KPC-Mental-Game.apk -d .
+          test -s KPC-Mental-Game.apk
+          file KPC-Mental-Game.apk
+
+      - name: Publish public update metadata
+        run: |
+          cat > update.json <<'JSON'
+          {
+            "versionCode": 30,
+            "versionName": "2.10",
+            "downloadUrl": "https://blackskyn1972.github.io/KPC-Mental-Game-Download/KPC-Mental-Game.apk",
+            "notes": "KPC Mental Game V2.10 : scouting collaboratif, photos Android et correction du bouton + Joueur."
+          }
+          JSON
+
+      - name: Commit public APK
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add KPC-Mental-Game.apk update.json
+          git diff --cached --quiet || git commit -m "Publish KPC Mental Game Android V2.10"
+          git push
