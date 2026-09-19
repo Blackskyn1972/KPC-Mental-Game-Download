@@ -83,6 +83,8 @@ jobs:
           s=s.replace('KPC Mental Game','KPC Mental Game et Compétition')
           p.write_text(s,encoding='utf-8')
           PY
+          KPC_APP_VERSION=2.13 KPC_APP_HTML=app/index.html python scripts/patch_version_badge.py
+          grep -q "Version 2.13" app/index.html
           python scripts/patch_pwa.py
 
           python - <<'PY'
@@ -113,5 +115,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: KPC-Mental-Game-et-Competition-iPhone-PWA-v2.12
+          name: KPC-Mental-Game-et-Competition-iPhone-PWA-v2.13
           path: app/
