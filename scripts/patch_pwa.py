@@ -5,7 +5,7 @@ s=p.read_text(encoding="utf-8")
 meta='''<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="KPC Mental Game">
+<meta name="apple-mobile-web-app-title" content="KPC Mental Game et Compétition">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="logo.svg">
 <style id="kpc-ios-pwa">
@@ -40,7 +40,7 @@ reg=r'''<script id="kpc-pwa-runtime">
     if(!isiOS() || standalone() || document.getElementById("kpcIosInstall")) return;
     var el=document.createElement("div");
     el.id="kpcIosInstall";
-    el.innerHTML="<b>📱 Installer KPC Mental Game sur iPhone</b><p>Dans Safari, touche <strong>Partager</strong> (carré avec la flèche), puis <strong>Ajouter à l’écran d’accueil</strong> et enfin <strong>Ajouter</strong>.</p><button type='button'>J’ai compris</button>";
+    el.innerHTML="<b>📱 Installer KPC Mental Game et Compétition sur iPhone</b><p>Dans Safari, touche <strong>Partager</strong> (carré avec la flèche), puis <strong>Ajouter à l’écran d’accueil</strong> et enfin <strong>Ajouter</strong>.</p><button type='button'>J’ai compris</button>";
     el.querySelector("button").onclick=function(){el.remove();sessionStorage.setItem("kpc_ios_install_seen","1");};
     document.body.appendChild(el);
   }
