@@ -1,0 +1,40 @@
+name: Publish KPC Android V2.12
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-android-v212.yml"
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download signed KPC V2.12 APK
+        run: |
+          set -e
+          curl -L --fail --retry 3 'https://sdmntprukwest.oaiusercontent.com/files/00000000-eacc-8243-82f0-83f8850a50cc/raw?se=2026-09-19T10%3A00%3A44Z&sp=r&sv=2026-02-06&sr=b&scid=fd232e84-2b7b-54d8-80d3-e9b4217e3685&skoid=5bfb38a5-43fb-4c63-80a1-6ae1e97e2e16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T04%3A41%3A12Z&ske=2026-09-20T04%3A41%3A12Z&sks=b&skv=2026-02-06&sig=NpjxbVfer4EHNJ6vFChzA2QPg2HA2Wp3dVE4s2DAb7U%3D' -o /tmp/kpc-v212.zip
+          unzip -o /tmp/kpc-v212.zip KPC-Mental-Game.apk -d .
+          test -s KPC-Mental-Game.apk
+
+      - name: Update public version metadata
+        run: |
+          cat > update.json <<'JSON'
+          {
+            "versionCode": 32,
+            "versionName": "2.12",
+            "downloadUrl": "https://raw.githubusercontent.com/Blackskyn1972/KPC-Mental-Game-Download/main/KPC-Mental-Game.apk",
+            "notes": "V2.12 : nouveau nom KPC Mental Game et Compétition, sans changement de compte ni de données."
+          }
+          JSON
+          sed -i 's/V2\.11/V2.12/g' download.html
+
+      - name: Publish V2.12
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add KPC-Mental-Game.apk update.json download.html
+          git diff --cached --quiet || git commit -m "Publish KPC Mental Game et Compétition Android V2.12"
+          git push
